@@ -1,28 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import * as actions from './actions/eventActions.js';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 class App extends Component {
+  componentDidMount() {
+    // console.log(this.props)
+    // this.props.fetchEvents();
+    fetch('/api/events')
+      .then(response => response.json())
+      .then(responseJson => responseJson.results.map(event => console.log(event.homePageUrlAdr)))
+      // .then(events.results.map( event => console.log(event)) )
+    }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <div>This is the app</div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { runEvents: state.events }
+}
+
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, {...actions})(App);
