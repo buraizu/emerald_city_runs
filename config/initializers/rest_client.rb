@@ -1,8 +1,9 @@
 require 'rest-client'
 require 'rails/configuration'
 
-  active_url = "http://api.amp.active.com/v2/search?query=running&category=races&city=Seattle&radius=50&start_date=2019-03-22..&api_key="
   api_key = ENV['ACTIVE_API_KEY']
+  current_date = Time.now.strftime("%Y-%m-%d")
+  active_url = "http://api.amp.active.com/v2/search?query=running&category=races&city=Seattle&radius=50&start_date=#{current_date}..&api_key="
 
   data = JSON.parse( RestClient.get("#{active_url}#{api_key}"))
 
