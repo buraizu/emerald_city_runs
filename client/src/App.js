@@ -4,6 +4,8 @@ import './App.css';
 import * as actions from './actions/eventActions.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
 
 import EventList from './events/EventList';
 
@@ -11,7 +13,7 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchEvents();
   }
-  
+
   render() {
     return (
       <div>
