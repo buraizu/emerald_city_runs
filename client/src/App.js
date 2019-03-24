@@ -11,7 +11,7 @@ class App extends Component {
     // this.props.fetchEvents();
     fetch('/api/events')
       .then(response => response.json())
-      .then(responseJson => responseJson.results.map(event => console.log(event.homePageUrlAdr)))
+      .then(responseJson => responseJson.results.map(event => console.log(event)))
       // .then(events.results.map( event => console.log(event)) )
     }
   render() {
