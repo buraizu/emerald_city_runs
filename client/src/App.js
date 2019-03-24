@@ -5,6 +5,8 @@ import * as actions from './actions/eventActions.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import EventList from './events/EventList';
+
 class App extends Component {
   componentDidMount() {
     // console.log(this.props)
@@ -16,7 +18,10 @@ class App extends Component {
     }
   render() {
     return (
-      <div>This is the app</div>
+      <div>
+        <div>This is the app</div>
+        <EventList />
+      </div>
     );
   }
 }
