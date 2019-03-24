@@ -10,22 +10,14 @@ import EventList from './events/EventList';
 class App extends Component {
   componentDidMount() {
     this.props.fetchEvents();
-    // console.log(this.props)
-    // this.props.fetchEvents();
-    // fetch('/api/events')
-    //   .then(response => response.json())
-    //   .then(responseJson => console.log(responseJson))
-      // .then(events.results.map( event => console.log(event)) )
-    }
+  }
+  
   render() {
     return (
-
-        <div>
-          <p>This is the app</p>
-          <EventList runEvents={this.props.runEvents} />
-        </div>
-
-
+      <div>
+        <p>This is the app</p>
+        <EventList runEvents={this.props.runEvents} />
+      </div>
     );
   }
 }
