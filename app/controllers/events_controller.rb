@@ -1,9 +1,10 @@
 class EventsController < ApplicationController
 
   def index
-    current_date = Time.now.strftime("%Y-%m-%d")
-    # filteredEvents = Event.all.map {|e| e.date >= current_date}
-    events = Event.all
+    current_date = Time.now
+    events = Event.all.select do |e|   # Remove past Events
+      e.date > current_date
+    end
 
     render json: events, status: 200
   end
