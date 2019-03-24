@@ -19,10 +19,13 @@ class App extends Component {
     }
   render() {
     return (
-      <div>
-        <div>This is the app</div>
-        <EventList runEvents={this.props.runEvents} />
-      </div>
+
+        <div>
+          <p>This is the app</p>
+          <EventList runEvents={this.props.runEvents} />
+        </div>
+
+
     );
   }
 }

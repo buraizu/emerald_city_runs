@@ -3,6 +3,8 @@ export function fetchEvents() {
     dispatch({ type: 'LOADING_EVENTS' });
     return fetch('/api/events')
       .then(response => response.json())
-      .then(responseJson => console.log(responseJson))
+      .then(responseJson => {
+        dispatch({ type: 'FETCH_EVENTS', payload: responseJson })
+      })
   }
 }
