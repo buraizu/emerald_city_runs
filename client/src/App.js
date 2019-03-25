@@ -12,7 +12,7 @@ import {
 
 
 import EventList from './events/EventList';
-import EventsPage from './events/EventsPage';
+import RunsContainer from './runs/RunsContainer';
 
 // <EventList runEvents={this.props.runEvents} />
 
@@ -27,6 +27,7 @@ class App extends Component {
         <div>
           <p>This is the app</p>
           <Route path='/events' render={() => <EventList runEvents={this.props.runEvents} />} />
+          <Route path='/runs' render={() => <RunsContainer />} />
         </div>
       </Router>
     );
