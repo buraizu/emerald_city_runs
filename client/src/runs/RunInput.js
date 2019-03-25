@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import uuid from 'uuid';
-import { addRun } from ''
+import { addRun } from '../actions/runActions.js';
 
 class RunInput extends Component {
 
