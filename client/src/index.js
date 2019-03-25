@@ -10,6 +10,8 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
+import EventsPage from './events/EventsPage';
+
 const store = createStore(
   rootReducer,
   compose(
@@ -20,9 +22,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
