@@ -8,9 +8,6 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index.js';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-import EventsPage from './events/EventsPage';
 
 const store = createStore(
   rootReducer,
