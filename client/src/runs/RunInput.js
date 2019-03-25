@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import uuid from 'uuid';
+
 class RunInput extends Component {
 
   state = {
@@ -16,7 +18,7 @@ class RunInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    const run = {...this.state}
+    const run = {...this.state, id: uuid() }
   }
 
   render() {
