@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => (
   <header>
     <ul>
-      <li><Link to="/events">Events</Link></li>
-      <li><Link to="/runs">Runs</Link></li>
+      <li><NavLink to="/events">Events</NavLink></li>
+      <li><NavLink to="/runs">Runs</NavLink></li>
     </ul>
   </header>
 )
