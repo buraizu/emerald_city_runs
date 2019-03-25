@@ -12,6 +12,7 @@ import {
 
 
 import EventList from './events/EventList';
+import EventsPage from './events/EventsPage';
 
 // <EventList runEvents={this.props.runEvents} />
 
@@ -22,10 +23,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <p>This is the app</p>
-        <Route path='/events' render={routerProps => <EventsPage {...routerProps} events={this.state.events} />} />
-      </div>
+      <Router>
+        <div>
+          <p>This is the app</p>
+          <Route path='/events' render={() => <EventList runEvents={this.props.runEvents} />} />
+        </div>
+      </Router>
     );
   }
 }
