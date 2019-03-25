@@ -20,6 +20,7 @@ class RunInput extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     const run = {...this.state, id: uuid() };
+
     this.props.addRun(run);
     this.setState({
       course: '',
