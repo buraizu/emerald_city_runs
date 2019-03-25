@@ -50,3 +50,5 @@ class RunInput extends Component {
   }
 
 }
+
+export default RunInput;
