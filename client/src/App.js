@@ -13,6 +13,7 @@ import {
 
 import EventList from './events/EventList';
 import RunsContainer from './runs/RunsContainer';
+import Header from './Header';
 
 // <EventList runEvents={this.props.runEvents} />
 
@@ -24,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Header />
         <div>
           <p>This is the app</p>
           <Route path='/events' render={() => <EventList runEvents={this.props.runEvents} />} />
