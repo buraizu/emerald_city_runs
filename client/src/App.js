@@ -6,14 +6,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 
 import EventList from './events/EventList';
 import RunsContainer from './runs/RunsContainer';
 import Header from './Header';
+import Home from './Home';
 
 // <EventList runEvents={this.props.runEvents} />
 
@@ -27,7 +27,7 @@ class App extends Component {
       <Router>
         <Header />
         <div>
-          <p>This is the app</p>
+          <Route exact path="/" render={() => <Home />} />
           <Route path='/events' render={() => <EventList runEvents={this.props.runEvents} />} />
           <Route path='/runs' render={() => <RunsContainer />} />
         </div>
