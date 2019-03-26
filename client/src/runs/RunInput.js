@@ -54,6 +54,7 @@ class RunInput extends Component {
           type="text"
           onChange={(event) => this.handleOnChange(event)}
           name="distance"
+          value={this.state.distance}
           placeholder="distance"
         />
         <br />
@@ -61,6 +62,7 @@ class RunInput extends Component {
           type="text"
           onChange={(event) => this.handleOnChange(event)}
           name="time"
+          value={this.state.time}
           placeholder="time"
         />
         <br />
@@ -75,6 +77,7 @@ class RunInput extends Component {
           type="text"
           onChange={(event) => this.handleOnChange(event)}
           name="rating"
+          value={this.state.rating}
           placeholder="rating"
         />
         <br />
