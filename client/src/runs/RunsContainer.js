@@ -10,8 +10,9 @@ import { connect } from 'react-redux';
    render() {
      return (
        <div>
-        <p>Runs Container</p>
+        <h2>Runs Container</h2>
         <RunInput addRun={this.props.addRun} />
+        <RunsList runs={this.props.runs} />
        </div>
      )
    }
