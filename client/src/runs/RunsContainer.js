@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import RunInput from './RunInput';
+import Run from './Run';
 
 import { connect } from 'react-redux';
 
