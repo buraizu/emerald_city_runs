@@ -17,8 +17,14 @@ import { connect } from 'react-redux';
    }
  }
 
+ const mapStateToProps = (state) => {
+   return {
+     runs: state.runs
+   }
+ }
+
  const mapDispatchToProps = (dispatch) => ({
    addRun: run => dispatch({ type: 'ADD_RUN', run })
  })
 
-export default connect (null, mapDispatchToProps)(RunsContainer);
+export default connect (mapStateToProps, mapDispatchToProps)(RunsContainer);
