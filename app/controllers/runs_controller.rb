@@ -1,6 +1,11 @@
 class RunsController < ApplicationController
 
+  def index
+    binding.pry
+  end
+
   def create
+    binding.pry
     @run = Run.new(run_params)
 
     if @run.save

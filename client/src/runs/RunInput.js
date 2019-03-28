@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import uuid from 'uuid';
-import { addRun } from '../actions/runActions.js';
 
+import { postRun } from '../actions/runActions';
 class RunInput extends Component {
 
   state = {
@@ -19,17 +19,12 @@ class RunInput extends Component {
     });
   }
 
-  handleTextAreaChange = (event) => {
-    this.setState({
-      ...this.state, review: event.target.value
-    })
-  }
-
   handleOnSubmit = (event) => {
     event.preventDefault();
     const run = {...this.state, id: uuid() };
 
-    this.props.addRun(run);
+    postRun(run);
+
     this.setState({
       course: '',
       distance: '',

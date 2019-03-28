@@ -22,7 +22,10 @@ class App extends Component {
     this.props.fetchEvents();
   }
 
+
+
   render() {
+
     return (
       <Router>
         <Header />
@@ -37,7 +40,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { runEvents: state.events }
+  return { runEvents: state.events } // Add runs?
 }
 
 function mapDispatchToProps(dispatch) {
