@@ -43,6 +43,7 @@ gem 'rest-client', '~> 1.8'
 gem 'dotenv-rails'
 gem 'pry'
 gem 'responders'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -4,30 +4,14 @@ export const postRun = (run) => {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
-      // 'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(run)
   }
 
-  return fetch('/api/runs.json', data)
-    .then(response => console.log(response))
+  return fetch('api/runs', data)
+    .then(response => response.json())
     .then(responseJson => console.log(responseJson))
     .catch(error => console.log(error))
-
-    function checkStatus(response) {
-      if (response.status >= 200 && response.status < 300) {
-        return response;
-      }
-      const error = new Error(`HTTP Error ${response.statusText}`);
-      error.status = response.statusText;
-      error.response = response;
-      console.log(error); // eslint-disable-line no-console
-      throw error;
-    }
-
-    function parseJSON(response) {
-      return response.json();
-    }
-
 
 }
