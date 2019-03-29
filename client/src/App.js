@@ -15,15 +15,12 @@ import RunsContainer from './runs/RunsContainer';
 import Header from './Header';
 import Home from './Home';
 
-// <EventList runEvents={this.props.runEvents} />
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchEvents();
-    // this.props.fetchRuns();
+    this.props.fetchRuns();
   }
-
-
 
   render() {
 
@@ -33,15 +30,19 @@ class App extends Component {
         <div>
           <Route exact path="/" render={() => <Home />} />
           <Route path='/events' render={() => <EventList runEvents={this.props.runEvents} />} />
-          <Route path='/runs' render={() => <RunsContainer />} />
+          <Route path='/runs' render={() => <RunsContainer runs={this.props.runs} />} />
         </div>
       </Router>
     );
   }
+
 }
 
 const mapStateToProps = (state) => {
-  return { runEvents: state.events } // Add runs?
+  return {
+    runEvents: state.events,
+    runs: state.runs
+   } // Add runs?
 }
 
 function mapDispatchToProps(dispatch) {

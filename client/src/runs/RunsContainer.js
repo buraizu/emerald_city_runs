@@ -7,18 +7,16 @@ import Run from './Run';
 import { connect } from 'react-redux';
 
 
- class RunsContainer extends Component {
+const RunsContainer = (props) => {
 
-   render() {
+  return (
+    <div>
+      <h2>Runs Container</h2>
+      <RunInput />
+      <RunsList runs={props.runs} />
+    </div>
+    )
 
-     return (
-       <div>
-        <h2>Runs Container</h2>
-        <RunInput />
-        <RunsList runs={this.props.runs} />
-       </div>
-     )
-   }
  }
 
  const mapStateToProps = (state) => {
@@ -27,9 +25,7 @@ import { connect } from 'react-redux';
    }
  }
 
- const mapDispatchToProps = (dispatch) => ({
-   addRun: run => dispatch({type: "ADD_RUN", run })
- })
+
 // let data = {
  //   method: 'POST',
  //   headers: {
@@ -44,4 +40,4 @@ import { connect } from 'react-redux';
  //     .then(run => dispatch({ type: 'ADD_RUN', run }))
  //     .catch(error => console.log(error))
  // }
-export default connect (mapStateToProps, mapDispatchToProps)(RunsContainer);
+export default RunsContainer;
