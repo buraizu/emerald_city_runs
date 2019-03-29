@@ -8,10 +8,13 @@ const RunsList = (props) => {
     <li key={index}>
       Course: {run.course}
       <br />
-      {run.distance} --
-      {run.time} --
-      {run.review} --
-      {run.rating} --
+      Distance: {run.distance}
+      <br />
+      Time: {run.time}
+      <br />
+      Review: {run.review}
+      <br />
+      Rating: {run.rating}
     </li>
   )
 
