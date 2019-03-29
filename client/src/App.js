@@ -20,6 +20,7 @@ import Home from './Home';
 class App extends Component {
   componentDidMount() {
     this.props.fetchEvents();
+    // this.props.fetchRuns();
   }
 
 
