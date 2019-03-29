@@ -7,15 +7,17 @@ import Run from './Run';
 import { connect } from 'react-redux';
 
 
-const RunsContainer = (props) => {
+class RunsContainer extends Component {
 
+  render() {
   return (
     <div>
       <h2>Runs Container</h2>
       <RunInput />
-      <RunsList runs={props.runs} />
+      <RunsList runs={this.props.runs} />
     </div>
     )
+  }
 
  }
 
