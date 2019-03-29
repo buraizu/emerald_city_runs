@@ -8,3 +8,14 @@ export function fetchEvents() {
       })
   }
 }
+
+export function fetchRuns() {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_RUNS'});
+    return fetch('/api/runs')
+      .then(response => response.json())
+      .then(responseJson => {
+        dispatch({ type: 'FETCH_RUNS', payload: responseJson })
+      })
+  }
+}
