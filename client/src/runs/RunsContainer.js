@@ -13,7 +13,7 @@ class RunsContainer extends Component {
   return (
     <div>
       <h2>Runs Container</h2>
-      <RunInput />
+      <RunInput postRun={this.props.postRun} />
       <RunsList runs={this.props.runs} />
     </div>
     )
@@ -26,6 +26,10 @@ class RunsContainer extends Component {
      runs: state.runs
    }
  }
+
+ const mapDispatchToProps = (dispatch) => ({
+   postRun: run => dispatch({ type: "POST_RUN", run })
+ })
 
 
 // let data = {
@@ -42,4 +46,4 @@ class RunsContainer extends Component {
  //     .then(run => dispatch({ type: 'ADD_RUN', run }))
  //     .catch(error => console.log(error))
  // }
-export default RunsContainer;
+export default connect (mapStateToProps, mapDispatchToProps)(RunsContainer);
