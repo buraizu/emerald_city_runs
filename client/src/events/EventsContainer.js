@@ -8,6 +8,10 @@ import { bindActionCreators } from 'redux';
 
 class EventsContainer extends Component {
 
+  componentDidMount() {
+    this.props.fetchEvents();
+  }
+
   render() {
     return (
       <div>
@@ -28,4 +32,4 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default connect(mapStateToProps)(EventsContainer);
+export default connect(mapStateToProps, {...actions})(EventsContainer);
