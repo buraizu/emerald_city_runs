@@ -5,7 +5,7 @@ import RunsList from './RunsList';
 import Run from './Run';
 
 import { connect } from 'react-redux';
-import * as actions from '../actions/eventActions.js';
+import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
 
 
