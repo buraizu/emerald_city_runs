@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 import RunsList from './RunsList';
+import RunForm from './RunForm';
 import Run from './Run';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
-import { Link } from 'react-router-dom';
 
 
 class RunsContainer extends Component {
@@ -19,7 +19,7 @@ class RunsContainer extends Component {
     return (
       <div>
         <h2>Runs Container</h2>
-        <Link to="/runs/new">New Run</Link>
+        <RunForm postRun={this.props.postRun} />
         <RunsList runs={this.props.runs} />
       </div>
     )

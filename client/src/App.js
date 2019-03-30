@@ -24,8 +24,7 @@ class App extends Component {
         <div>
           <Route exact path="/" render={() => <Home />} />
           <Route path='/events' render={() => <EventsContainer />} />
-          <Route exact path='/runs' render={() => <RunsContainer />} />
-          <Route path="/runs/new" render={() => <RunForm />} />
+          <Route path='/runs' render={() => <RunsContainer />} />
         </div>
       </Router>
     );

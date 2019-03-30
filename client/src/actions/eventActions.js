@@ -32,7 +32,7 @@ export function postRun(run) {
   }
 
   return function(dispatch) {
-    return fetch('api/runs', data)
+    return fetch('/api/runs', data)
       .then(response => response.json())
       .then(responseJson => {
         dispatch({ type: 'ADD_RUN', run: responseJson})
