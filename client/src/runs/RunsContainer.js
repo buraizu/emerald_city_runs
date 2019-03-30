@@ -19,7 +19,7 @@ class RunsContainer extends Component {
   return (
     <div>
       <h2>Runs Container</h2>
-      <RunInput postRun3={this.props.postRun3} />
+      <RunInput postRun={this.props.postRun} />
       <RunsList runs={this.props.runs} />
     </div>
     )
