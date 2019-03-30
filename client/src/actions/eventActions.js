@@ -39,3 +39,8 @@ export function postRun(run) {
       })
   }
 }
+
+export function handleDelete() {
+  console.log('in handle delete');
+  return null;
+}

@@ -15,6 +15,8 @@ const RunsList = (props) => {
       Review: {run.review}
       <br />
       Rating: {run.rating}
+      <br />
+      <button onClick={props.handleDelete}>Delete</button>
     </li>
   )
 
