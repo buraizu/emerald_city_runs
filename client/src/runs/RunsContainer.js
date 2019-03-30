@@ -11,6 +11,10 @@ import { bindActionCreators } from 'redux';
 
 class RunsContainer extends Component {
 
+  componentDidMount() {
+    this.props.fetchRuns();
+  }
+
   render() {
   return (
     <div>
@@ -50,4 +54,4 @@ class RunsContainer extends Component {
  //     .then(run => dispatch({ type: 'ADD_RUN', run }))
  //     .catch(error => console.log(error))
  // }
-export default connect (mapStateToProps, mapDispatchToProps)(RunsContainer);
+export default connect (mapStateToProps, {...actions})(RunsContainer);
