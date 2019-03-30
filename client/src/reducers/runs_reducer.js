@@ -14,12 +14,8 @@ export default function runsReducer(state = { loading: false, runs: [] }, action
 
     case 'ADD_RUN':
 
-      const newRun = {
-        run: action.run
-      };
-
       return {
-        runs: [...state.runs, newRun.run]
+        runs: [...state.runs, action.run]
       };
 
     default:
