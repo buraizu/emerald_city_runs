@@ -14,6 +14,7 @@ import EventList from './events/EventList';
 import RunsContainer from './runs/RunsContainer';
 import Header from './Header';
 import Home from './Home';
+import EventsContainer from './events/EventsContainer';
 
 
 class App extends Component {
@@ -29,7 +30,7 @@ class App extends Component {
         <Header />
         <div>
           <Route exact path="/" render={() => <Home />} />
-          <Route path='/events' render={() => <EventList runEvents={this.props.runEvents} />} />
+          <Route path='/events' render={() => <EventsContainer runEvents={this.props.runEvents} />} />
           <Route path='/runs' render={() => <RunsContainer runs={this.props.runs} />} />
         </div>
       </Router>
