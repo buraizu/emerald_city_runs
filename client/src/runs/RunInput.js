@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-import uuid from 'uuid';
-
-import { postRun } from '../actions/runActions';
+// import { postRun3 } from '../actions/eventActions';
 class RunInput extends Component {
 
   state = {
@@ -21,9 +19,10 @@ class RunInput extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault();
-    const run = {...this.state, id: uuid() };
+    const run = {...this.state};
+    // const newState = this.state.runs.concat(run);
 
-    postRun(run);
+    this.props.postRun3(run);
 
     this.setState({
       course: '',
@@ -32,6 +31,8 @@ class RunInput extends Component {
       review: '',
       rating: ''
     })
+    // event.target.reset() ?
+    // this.setState({ runs: newState })
   }
 
   render() {
