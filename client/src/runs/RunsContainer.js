@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import RunInput from './RunInput';
 import RunsList from './RunsList';
 import Run from './Run';
 
@@ -20,7 +19,6 @@ class RunsContainer extends Component {
     return (
       <div>
         <h2>Runs Container</h2>
-        <RunInput postRun={this.props.postRun} />
         <Link to="/runs/new">New Run</Link>
         <RunsList runs={this.props.runs} />
       </div>

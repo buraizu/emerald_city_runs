@@ -12,7 +12,7 @@ import RunsContainer from './runs/RunsContainer';
 import Header from './Header';
 import Home from './Home';
 import EventsContainer from './events/EventsContainer';
-
+import RunForm from './runs/RunForm';
 
 class App extends Component {
 
@@ -24,8 +24,8 @@ class App extends Component {
         <div>
           <Route exact path="/" render={() => <Home />} />
           <Route path='/events' render={() => <EventsContainer />} />
-          <Route path='/runs' render={() => <RunsContainer />} />
-          <Route exact path="/runs/new" render={() => <RunForm />} />
+          <Route exact path='/runs' render={() => <RunsContainer />} />
+          <Route path="/runs/new" render={() => <RunForm />} />
         </div>
       </Router>
     );
