@@ -5,6 +5,8 @@ import RunsList from './RunsList';
 import Run from './Run';
 
 import { connect } from 'react-redux';
+import * as actions from '../actions/eventActions.js';
+import { bindActionCreators } from 'redux';
 
 
 class RunsContainer extends Component {
@@ -27,11 +29,13 @@ class RunsContainer extends Component {
    }
  }
 
- const mapDispatchToProps = (dispatch) => ({
-   postRun: run => dispatch({ type: "POST_RUN", run })
- })
+ // const mapDispatchToProps = (dispatch) => ({
+ //   postRun: run => dispatch({ type: "POST_RUN", run })
+ // })
 
-
+ function mapDispatchToProps(dispatch) {
+   return { actions: bindActionCreators(actions, dispatch) }
+ }
 // let data = {
  //   method: 'POST',
  //   headers: {
