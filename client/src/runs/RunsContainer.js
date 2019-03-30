@@ -16,12 +16,12 @@ class RunsContainer extends Component {
   }
 
   render() {
-  return (
-    <div>
-      <h2>Runs Container</h2>
-      <RunInput postRun={this.props.postRun} />
-      <RunsList runs={this.props.runs} />
-    </div>
+    return (
+      <div>
+        <h2>Runs Container</h2>
+        <RunInput postRun={this.props.postRun} />
+        <RunsList runs={this.props.runs} />
+      </div>
     )
   }
 
