@@ -10,10 +10,16 @@ class EventsContainer extends Component {
     return (
       <div>
         <h2>Events Container</h2>
-        <EventList runEvents={this.props.runEvents} />
+        <EventList runEvents={this.props.events} />
       </div>
     )
   }
 }
 
-export default EventsContainer;
+const mapStateToProps = (state) => {
+  return {
+    events: state.events
+  }
+}
+
+export default connect(mapStateToProps)(EventsContainer);
