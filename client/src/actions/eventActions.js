@@ -20,7 +20,7 @@ export function fetchRuns() {
   }
 }
 
-export const postRun = (run) => {
+export function postRun(run) {
 
   let data = {
     method: 'POST',
@@ -31,30 +31,11 @@ export const postRun = (run) => {
     body: JSON.stringify(run)
   }
 
-  return fetch('api/runs', data)
-    .then(response => response.json())
-    .then(responseJson => console.log(responseJson))
-    .catch(error => console.log(error))
-
-}
-
-export function postRun3(run) {
-
-  let data = {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(run)
-  }
-
-return function(dispatch) {
-  return fetch('api/runs', data)
-
-    .then(response => response.json())
-    .then(responseJson => {
-      dispatch({ type: 'ADD_RUN', run: responseJson})
-    })
+  return function(dispatch) {
+    return fetch('api/runs', data)
+      .then(response => response.json())
+      .then(responseJson => {
+        dispatch({ type: 'ADD_RUN', run: responseJson})
+      })
   }
 }
