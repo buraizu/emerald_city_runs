@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class RunInput extends Component {
+class RunForm extends Component {
 
   state = {
     course: '',
@@ -80,4 +80,4 @@ class RunInput extends Component {
 
 }
 
-export default RunInput;
+export default RunForm;
