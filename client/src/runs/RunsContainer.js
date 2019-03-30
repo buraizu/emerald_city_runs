@@ -20,7 +20,7 @@ class RunsContainer extends Component {
       <div>
         <h2>Runs Container</h2>
         <RunForm postRun={this.props.postRun} />
-        <RunsList runs={this.props.runs} />
+        <RunsList runs={this.props.runs} handleDelete={this.props.handleDelete} />
       </div>
     )
   }
