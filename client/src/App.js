@@ -30,8 +30,8 @@ class App extends Component {
         <Header />
         <div>
           <Route exact path="/" render={() => <Home />} />
-          <Route path='/events' render={() => <EventsContainer runEvents={this.props.runEvents} />} />
-          <Route path='/runs' render={() => <RunsContainer runs={this.props.runs} />} />
+          <Route path='/events' render={() => <EventsContainer />} />
+          <Route path='/runs' render={() => <RunsContainer />} />
         </div>
       </Router>
     );
