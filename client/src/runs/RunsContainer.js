@@ -33,25 +33,8 @@ class RunsContainer extends Component {
    }
  }
 
- // const mapDispatchToProps = (dispatch) => ({
- //   postRun: run => dispatch({ type: "POST_RUN", run })
- // })
-
  function mapDispatchToProps(dispatch) {
    return { actions: bindActionCreators(actions, dispatch) }
  }
-// let data = {
- //   method: 'POST',
- //   headers: {
- //     'Accept': 'application/json',
- //     'Content-Type': 'application/json',
- //   },
- //   body: JSON.stringify({ run })
- // }
- // return dispatch => {
- //   fetch('/api/runs', data)
- //     .then(response => response.json())
- //     .then(run => dispatch({ type: 'ADD_RUN', run }))
- //     .catch(error => console.log(error))
- // }
+
 export default connect (mapStateToProps, {...actions})(RunsContainer);
