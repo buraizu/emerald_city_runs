@@ -13,6 +13,7 @@ import Header from './Header';
 import Home from './Home';
 import EventsContainer from './events/EventsContainer';
 import RunForm from './runs/RunForm';
+import RunPage from './runs/RunPage';
 
 class App extends Component {
 
@@ -22,9 +23,10 @@ class App extends Component {
       <Router>
         <Header />
         <div>
-          <Route exact path="/" render={() => <Home />} />
-          <Route path='/events' render={() => <EventsContainer />} />
-          <Route path='/runs' render={() => <RunsContainer />} />
+          <Route exact path="/" component={Home} />
+          <Route path='/events' component={EventsContainer} />
+          <Route path='/runs' component={RunsContainer} />
+          <Route exact path='/runs/:id' component={RunPage} />
         </div>
       </Router>
     );
