@@ -1,15 +1,13 @@
 import React from 'react';
 
-const Run = (props) => {
-  console.log(props)
+import { Link } from "react-router-dom";
+
+const Run = ({run}) => {
+
   return (
     <div>
-      <h3>Course: {props.run.course}</h3>
-      <p>Distance: {props.run.distance}</p>
-      <p>Time: {props.run.time}</p>
-      <p>Review: {props.run.review}</p>
-      <p>Rating: {props.run.rating}</p>
-      <button onClick={props.handleDelete}>Delete</button>
+      <h3>Course: {run.course}</h3>
+      <Link to={'/runs/' + run.id}>Details</Link>
       <p>------------</p>
     </div>
   )
