@@ -5,7 +5,24 @@ import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
 
 class RunPage extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {isEditing: false};
+    this.toggleEdit = this.toggleEdit.bind(this);
+  }
+
+  toggleEdit() {
+    this.setState({isEditing: !this.state.isEditing})
+  }
+
   render() {
+    if (this.state.isEditing) {
+      return (
+        <div>
+          Edit Run
+        </div>
+      )
+    }
     return (
       <div>
         <h3>RunPage</h3>
@@ -15,6 +32,7 @@ class RunPage extends Component {
         <p>Time: {this.props.run.time}</p>
         <p>Review: {this.props.run.review}</p>
         <p>Rating: {this.props.run.rating}</p>
+        <button onClick={this.toggleEdit}>edit</button>
       </div>
     )
   }
