@@ -15,17 +15,3 @@ const Run = ({run}) => {
 }
 
 export default Run;
-
-// <li key={index}>
-//   Course: {run.course}
-//   <br />
-//   Distance: {run.distance}
-//   <br />
-//   Time: {run.time}
-//   <br />
-//   Review: {run.review}
-//   <br />
-//   Rating: {run.rating}
-//   <br />
-//   <button onClick={props.handleDelete}>Delete</button>
-// </li>
