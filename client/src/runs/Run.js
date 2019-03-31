@@ -9,6 +9,7 @@ const Run = (props) => {
       <p>Time: {props.run.time}</p>
       <p>Review: {props.run.review}</p>
       <p>Rating: {props.run.rating}</p>
+      <button onClick={props.handleDelete}>Delete</button>
       <p>------------</p>
     </div>
   )

@@ -5,7 +5,7 @@ import Run from './Run';
 const RunsList = (props) => {
 
   const displayRuns = props.runs.runs.map((run, index) =>
-    <Run id={run.id} key={run.id} run={run} />
+    <Run id={run.id} key={run.id} run={run} handleDelete={props.handleDelete} />
   )
 
   return (
