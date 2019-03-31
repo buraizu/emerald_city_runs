@@ -7,12 +7,21 @@ import { bindActionCreators } from 'redux';
 class RunPage extends Component {
   constructor(props, context) {
     super(props, context);
-    this.state = {isEditing: false};
+    this.state = {
+      isEditing: false,
+      run: this.props.run
+    };
     this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   toggleEdit() {
     this.setState({isEditing: !this.state.isEditing})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.props.run.id != nextProps.run.id) {
+      this.setState({run: nextProps.run});
+    }
   }
 
   render() {
@@ -26,8 +35,7 @@ class RunPage extends Component {
     return (
       <div>
         <h3>RunPage</h3>
-        <h4>Course: </h4>
-          <p>{this.props.run.course}</p>
+        <h4>Course: {this.props.run.course}</h4>
         <p>Distance: {this.props.run.distance}</p>
         <p>Time: {this.props.run.time}</p>
         <p>Review: {this.props.run.review}</p>
