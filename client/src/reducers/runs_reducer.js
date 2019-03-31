@@ -18,6 +18,8 @@ export default function runsReducer(state = { loading: false, runs: [] }, action
         runs: [...state.runs, action.run]
       };
 
+
+
     default:
       return state;
   }

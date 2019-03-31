@@ -40,7 +40,7 @@ export function postRun(run) {
   }
 }
 
-export function handleDelete(index) {
+export function handleDelete(run) {
 
   console.log('in handle delete');
   return null;
