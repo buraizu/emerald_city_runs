@@ -6,13 +6,16 @@ class RunsController < ApplicationController
   end
 
   def create
-
     @run = Run.new(run_params)
-
     if @run.save
       render json: @run
     end
+  end
 
+  def update
+    @run = Run.find_by(id: params[:id])
+    @run.update(run_params)
+    render json: @run
   end
 
   private
