@@ -18,7 +18,14 @@ export default function runsReducer(state = { loading: false, runs: [] }, action
         runs: [...state.runs, action.run]
       };
 
-
+    case 'UPDATE_RUN':
+  
+      return {
+        runs: [
+          ...state.runs.filter(run => run.id !== action.run.id),
+          Object.assign({}, action.run)
+        ]
+      }
 
     default:
       return state;
