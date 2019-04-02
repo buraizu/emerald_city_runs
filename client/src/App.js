@@ -31,7 +31,7 @@ class App extends Component {
         <FeaturedEvent />
         <div>
           <Route exact path="/" component={Home} />
-          <Route path='/events' render={ () => <EventsContainer events={this.props.events} />} />
+          <Route path='/events' render={ () => <EventsContainer events={this.props.events} setEvents={this.props.setEvents} />} />
           <Route path='/runs' component={RunsContainer} />
           <Route exact path='/runs/:id' component={RunPage} />
         </div>
