@@ -14,7 +14,7 @@ const EventList = (props) => {
        >
         Check it out
       </a>
-      
+      <button onClick={this.setEvent}>Set this is as your event!</button>
     </li>)
 
   return (
