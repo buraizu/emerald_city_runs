@@ -76,7 +76,7 @@ export function deleteRun(run) {
 
 }
 
-export function featureEvent(event) {
+export function setEvent(event) {
   let eventId = event.id;
   let data = {
     method: 'PUT',
