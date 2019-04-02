@@ -40,12 +40,6 @@ export function postRun(run) {
   }
 }
 
-export function handleDelete(run) {
-
-  console.log('in handle delete');
-  return null;
-}
-
 export function updateRun(run) {
   let runId = run.id;
   let data = {
@@ -66,10 +60,18 @@ export function updateRun(run) {
   }
 }
 
-  // static updateCat(cat) {
-  //   const headers = Object.assign({'Content-Type': 'application/json'}, this.requestHeaders());
-  //   const request = new Request(`${process.env.API_HOST}/api/v1/cats/${cat.id}`, {
-  //     method: 'PUT',
-  //     headers: headers,
-  //     body: JSON.stringify({cat: cat})
-  //   });
+export function deleteRun(run) {
+
+  let data = {
+    method: 'DELETE',
+  }
+
+  return function(dispatch) {
+    return fetch(`/api/runs/${run.id}`, data)
+      .then(dispatch({type: 'DELETE_RUN', run: run}))
+      .then(() => console.log('whoa dude'))
+
+  }
+    return;
+
+}

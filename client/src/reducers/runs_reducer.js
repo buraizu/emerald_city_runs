@@ -19,13 +19,23 @@ export default function runsReducer(state = { loading: false, runs: [] }, action
       };
 
     case 'UPDATE_RUN':
-  
+
       return {
         runs: [
           ...state.runs.filter(run => run.id !== action.run.id),
           Object.assign({}, action.run)
         ]
       }
+
+    case 'DELETE_RUN':
+
+      const idOfRunToDelete = action.run.id
+
+      const newState = Object.assign([], state.runs.filter(run => {
+        return run.id != idOfRunToDelete
+      }));
+
+      return newState;
 
     default:
       return state;

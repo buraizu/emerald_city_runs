@@ -18,6 +18,11 @@ class RunsController < ApplicationController
     render json: @run
   end
 
+  def destroy
+    @run = Run.find_by(id: params[:id])
+    @run.delete
+  end
+
   private
 
   def run_params

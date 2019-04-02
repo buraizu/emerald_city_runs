@@ -6,6 +6,7 @@ import RunForm2 from './RunForm2';
 import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 class RunPage extends Component {
   constructor(props, context) {
@@ -18,6 +19,7 @@ class RunPage extends Component {
     this.updateRunState = this.updateRunState.bind(this);
     this.saveRun = this.saveRun.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
+    this.deleteRun = this.deleteRun.bind(this);
   }
 
   updateRunState(event) {
@@ -38,6 +40,11 @@ class RunPage extends Component {
     this.setState({isEditing: true})
   }
 
+  deleteRun(event) {
+    this.props.actions.deleteRun(this.state.run)
+    this.props.history.push("/")
+  }
+
   componentWillReceiveProps(nextProps) {
     if(this.props.run.id != nextProps.run.id) {
       this.setState({run: nextProps.run});
@@ -46,6 +53,7 @@ class RunPage extends Component {
   }
 
   render() {
+
     if (this.state.isEditing) {
       return (
         <div>
@@ -67,6 +75,7 @@ class RunPage extends Component {
         <p>Review: {this.props.run.review}</p>
         <p>Rating: {this.props.run.rating}</p>
         <button onClick={this.toggleEdit}>edit</button>
+        <button onClick={this.deleteRun}>delete</button>
       </div>
     )
   }
@@ -88,4 +97,4 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RunPage);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RunPage));
