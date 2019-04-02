@@ -6,30 +6,15 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';   // need new action file
 import { bindActionCreators } from 'redux';
 
-class EventsContainer extends Component {
+const EventsContainer = (props) => {
 
-  componentDidMount() {
-    this.props.fetchEvents();
-  }
+  return (
+    <div>
+      <h2>Events Container</h2>
+      <EventList runEvents={props.events} />
+    </div>
+  )
 
-  render() {
-    return (
-      <div>
-        <h2>Events Container</h2>
-        <EventList runEvents={this.props.events} />
-      </div>
-    )
-  }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    events: state.events
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) }
-}
-
-export default connect(mapStateToProps, {...actions})(EventsContainer);
+export default EventsContainer;

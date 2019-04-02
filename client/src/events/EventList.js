@@ -14,6 +14,7 @@ const EventList = (props) => {
        >
         Check it out
       </a>
+      
     </li>)
 
   return (
