@@ -75,3 +75,23 @@ export function deleteRun(run) {
     return;
 
 }
+
+export function featureEvent(event) {
+  let eventId = event.id;
+  let data = {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(event)
+  }
+
+  return function(dispatch) {
+    return fetch(`/api/events/${eventId}`, data)
+      .then(response => response.json())
+      .then(responseJson => {
+        dispatch({type: 'FEATURE_EVENT', event: responseJson})
+      })
+  }
+}
