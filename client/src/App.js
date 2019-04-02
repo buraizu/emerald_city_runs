@@ -14,6 +14,7 @@ import Home from './Home';
 import EventsContainer from './events/EventsContainer';
 import RunForm from './runs/RunForm';
 import RunPage from './runs/RunPage';
+import FeaturedEvent from './events/FeaturedEvent';
 
 class App extends Component {
 
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <Router>
         <Header />
+        <FeaturedEvent />
         <div>
           <Route exact path="/" component={Home} />
           <Route path='/events' component={EventsContainer} />
