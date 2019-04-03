@@ -1,21 +1,14 @@
 import React from 'react';
 
+import EventPage from './EventPage';
+
 const EventList = (props) => {
 
   console.log(props.runEvents);
 
-  const displayEvents = props.runEvents.events.map((run, index) =>
-    <li key={index}>
-      {run.date} --
-      {run.title} --
-      <a href={run.url}
-        target="_blank"
-        rel="noopener noreferrer"
-       >
-        Check it out
-      </a>
-      <button onClick={this.setEvent}>Set this is as your event!</button>
-    </li>)
+  const displayEvents = props.runEvents.events.map((event, index) => {
+    return <EventPage key={index} event={event} />
+  })
 
   return (
     <ul>

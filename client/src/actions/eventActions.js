@@ -72,11 +72,12 @@ export function deleteRun(run) {
       .then(() => console.log('whoa dude'))
 
   }
-    return;
+    return;   // ?
 
 }
 
 export function setEvent(event) {
+
   let eventId = event.id;
   let data = {
     method: 'PUT',
