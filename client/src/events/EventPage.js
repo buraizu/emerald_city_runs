@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
@@ -5,39 +6,53 @@ import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
 
 class EventPage extends Component {
+
+  componentDidMount() {
+
+  }
+
   constructor(props, context) {
     super(props, context)
     this.state = {
-      isFeatured: false
+      runEvent: this.props.event
     }
+    this.updateEventState = this.updateEventState.bind(this);
+    this.toggleFeatured = this.toggleFeatured.bind(this);
+
   }
 
-  // updateRunState(event) {
-  //   const field = event.target.name;
-  //   const run = this.state.run;
-  //   run[field] = event.target.value;
-  //   return this.setState({run: run});
-  // }
+  toggleFeatured() {
+    const runEvent = this.state.runEvent;
+    runEvent["featured"] = true;
+    return this.setState({runEvent: runEvent})
+  }
 
-  toggleEdit() {
-    this.setState({isFeatured: true})
+  updateEventState() {
+    this.toggleFeatured();
+    this.props.actions.setEvent(this.state.runEvent);
+  }
+
+  getFeaturedEvent() {
+
   }
 
   render() {
     return (
       <li
         key={this.props.key}
-        event={this.props.event}
+        event={this.props.runEvent}
       >
-        <h3>{this.props.event.title}</h3>
-        <p>{this.props.event.date}</p>
+        <h3>{this.props.runEvent.title}</h3>
+        <p>{this.props.runEvent.date}</p>
         <a
-          href={this.props.event.url}
+          href={this.props.runEvent.url}
           target="_blank"
           rel="noopener noreferrer"
         >
           Event Home Page
         </a>
+        <br />
+        <button onClick={this.updateEventState}>Set your event</button>
       </li>
 
     )
@@ -45,9 +60,8 @@ class EventPage extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-
   let event = {title: '', description: '', isFeatured: ''}
-  const eventId = ownProps.event.id;
+  const eventId = ownProps.runEvent.id;
   event = Object.assign({}, state.events.events.find(event => event.id == eventId))
 
   return {event: event}
