@@ -9,4 +9,16 @@ class EventsController < ApplicationController
     render json: events, status: 200
   end
 
+  def update
+    @event = Event.find_by(id: params[:id])
+    @event.update(event_params)
+    render json: @event
+  end
+
+  private
+
+    def event_params
+      params.require(:event).permit(:title, :url, :date, :featured)
+    end
+
 end
