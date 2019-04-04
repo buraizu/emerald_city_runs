@@ -7,7 +7,7 @@ const EventList = (props) => {
   console.log(props.runEvents);
 
   const displayEvents = props.runEvents.events.map((event, index) => {
-    return <EventPage key={index} event={event} />
+    return <EventPage key={index} runEvent={event} />
   })
 
   return (

@@ -8,9 +8,14 @@ export default function eventsReducer(state = { loading: false, events: []}, act
     case 'FETCH_EVENTS':
       return {loading: false, events: action.payload};
 
-    case 'FEATURE_EVENT':
-      debugger;
-      // return Object.assign([], state.events)
+      case 'FEATURE_EVENT':
+
+        return {
+          events: [
+            ...state.events.filter(event => event.id !== action.event.id),
+            Object.assign({}, action.event)
+          ]
+        }
 
     default:
       return state;
