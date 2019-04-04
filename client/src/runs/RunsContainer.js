@@ -8,7 +8,6 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
 
-
 class RunsContainer extends Component {
 
   componentDidMount() {
@@ -17,7 +16,7 @@ class RunsContainer extends Component {
 
   render() {
     const runs = this.props.runs;
-  
+
       return (
         <div>
           <h2>Runs Container</h2>
@@ -28,9 +27,7 @@ class RunsContainer extends Component {
           </div>
         </div>
       )
-
-
-  }
+    }
 
  }
 
