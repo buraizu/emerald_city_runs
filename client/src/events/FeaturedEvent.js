@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
-const FeaturedEvent = () => {
+const FeaturedEvent = (props) => {
+
   return (
     <div>
-      <h3>Check out some events to train for!</h3>
-      <Link to="/events">Events</Link>
+      <h3>You're currently training for {props.event.props.children.props.event.title}!</h3>
+      <a href={props.event.props.children.props.event.url} target="_blank" rel="noopener noreferrer">Event Home Page</a>
     </div>
   )
 }
