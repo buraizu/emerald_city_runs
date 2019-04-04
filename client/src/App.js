@@ -16,20 +16,16 @@ import Home from './Home';
 import EventsContainer from './events/EventsContainer';
 import RunForm from './runs/RunForm';
 import RunPage from './runs/RunPage';
-import FeaturedEvent from './events/FeaturedEvent';
+
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.fetchEvents();
-  }
 
   render() {
-  
+
     return (
       <Router>
         <Header />
-        <FeaturedEvent />
         <div>
           <Route exact path="/" component={Home} />
           <Route path='/events' render={ () => <EventsContainer events={this.props.events} setEvents={this.props.setEvents} />} />
@@ -42,14 +38,6 @@ class App extends Component {
 
 }
 
-const mapStateToProps = (state) => {
-  return {
-    events: state.events
-  }
-}
 
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) }
-}
 
-export default connect(mapStateToProps, {...actions})(App);
+export default App;
