@@ -1,4 +1,4 @@
-export default function eventsReducer(state = { loading: false, events: [], featuredEvent: []}, action) {
+export default function eventsReducer(state = { loading: false, events: [], featuredEvent: null}, action) {
 
   switch(action.type) {
 
@@ -6,11 +6,13 @@ export default function eventsReducer(state = { loading: false, events: [], feat
       return Object.assign({}, state, {loading: true});
 
     case 'FETCH_EVENTS':
-      let feature = action.payload.find(event => event.featured === true)
+      let allFeatures = action.payload.filter(event => event.featured === true)
+      let mostRecentFeatures = allFeatures.sort((feature1, feature2) => new Date(feature2.updated_at) - new Date(feature1.updated_at))
+      let feature = mostRecentFeatures[0]
+
       return {loading: false, events: action.payload, featuredEvent: feature};
 
       case 'FEATURE_EVENT':
-
         return {
           events: [
             ...state.events
