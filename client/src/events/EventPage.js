@@ -49,7 +49,7 @@ class EventPage extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Event Home Page
+          {this.props.runEvent.title}
         </a>
         <br />
         <button onClick={this.updateEventState}>Set your event</button>
@@ -60,9 +60,8 @@ class EventPage extends Component {
 }
 
 function mapStateToProps(state, ownProps) {
-  let event = {title: '', description: '', isFeatured: ''}
   const eventId = ownProps.runEvent.id;
-  event = Object.assign({}, state.events.events.find(event => event.id == eventId))
+  let event = Object.assign({}, state.events.events.find(event => event.id == eventId))
 
   return {event: event}
 }
