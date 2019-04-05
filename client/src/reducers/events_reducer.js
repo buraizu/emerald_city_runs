@@ -1,4 +1,4 @@
-export default function eventsReducer(state = { loading: false, events: []}, action) {
+export default function eventsReducer(state = { loading: false, events: [], featuredEvent: []}, action) {
 
   switch(action.type) {
 
@@ -6,15 +6,16 @@ export default function eventsReducer(state = { loading: false, events: []}, act
       return Object.assign({}, state, {loading: true});
 
     case 'FETCH_EVENTS':
-      return {loading: false, events: action.payload};
+      let feature = action.payload.find(event => event.featured === true)
+      return {loading: false, events: action.payload, featuredEvent: feature};
 
       case 'FEATURE_EVENT':
 
         return {
           events: [
-            ...state.events.filter(event => event.id !== action.event.id),
-            Object.assign({}, action.event)
-          ]
+            ...state.events
+          ],
+          featuredEvent: action.event
         }
 
     default:
