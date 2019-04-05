@@ -76,20 +76,20 @@ export function deleteRun(run) {
 
 }
 
-export function setEvent(event) {
-
-  let eventId = event.id;
+export function setEvent(feature) {
+  feature.updated_at = new Date();
+  let featureId = feature.id;
   let data = {
     method: 'PUT',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(event)
+    body: JSON.stringify(feature)
   }
 
   return function(dispatch) {
-    return fetch(`/api/events/${eventId}`, data)
+    return fetch(`/api/events/${featureId}`, data)
       .then(response => response.json())
       .then(responseJson => {
         dispatch({type: 'FEATURE_EVENT', event: responseJson})
