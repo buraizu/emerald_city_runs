@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';   // need new action file
@@ -33,6 +34,12 @@ const mapStateToProps = (state) => {
 
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
+}
+
+EventsContainer.propTypes = {
+  fetchEvents: PropTypes.func.isRequired,
+  setEvent: PropTypes.func.isRequired,
+  events: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, {...actions})(EventsContainer);

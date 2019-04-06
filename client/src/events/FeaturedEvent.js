@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const FeaturedEvent = (props) => {
   if(props.feature) {
@@ -15,6 +16,10 @@ const FeaturedEvent = (props) => {
     )
   }
 
+}
+
+FeaturedEvent.propTypes = {
+  feature: PropTypes.object
 }
 
 export default FeaturedEvent;
