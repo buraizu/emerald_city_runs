@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
+import PropTypes from 'prop-types';
 
-class RunForm2 extends Component {
+class EditRunForm extends Component {
   constructor(props) {
     super(props);
   }
@@ -58,4 +59,10 @@ class RunForm2 extends Component {
   }
 }
 
-export default RunForm2;
+EditRunForm.propTypes = {
+  run: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  saveRun: PropTypes.func.isRequired
+}
+
+export default EditRunForm;

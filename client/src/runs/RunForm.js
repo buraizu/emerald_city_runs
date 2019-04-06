@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class RunForm extends Component {
 
@@ -78,6 +79,10 @@ class RunForm extends Component {
     )
   }
 
+}
+
+RunForm.propTypes = {
+  postRun: PropTypes.func.isRequired
 }
 
 export default RunForm;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import RunForm from './RunForm';
-import RunForm2 from './RunForm2';
+import EditRunForm from './EditRunForm';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';  // need new actions file
@@ -58,7 +58,7 @@ class RunPage extends Component {
       return (
         <div>
           <h2>Edit Run</h2>
-          <RunForm2
+          <EditRunForm
             run={this.state.run}
             onChange={this.updateRunState}
             saveRun={this.saveRun}
