@@ -11,12 +11,12 @@ export default function eventsReducer(state = { loading: false, events: [], feat
       let feature = mostRecentFeatures[0]
       let sortedEvents = action.payload.sort((event1, event2) => new Date(event1.date) - new Date(event2.date))
 
-      return {loading: false, events: action.payload, featuredEvent: feature};
+      return {loading: false, events: sortedEvents, featuredEvent: feature};
 
       case 'FEATURE_EVENT':
         return {
           events: [
-            ...sortedEvents
+            ...state.events
           ],
           featuredEvent: action.event
         }
