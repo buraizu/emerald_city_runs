@@ -9,13 +9,14 @@ export default function eventsReducer(state = { loading: false, events: [], feat
       let allFeatures = action.payload.filter(event => event.featured === true)
       let mostRecentFeatures = allFeatures.sort((feature1, feature2) => new Date(feature2.updated_at) - new Date(feature1.updated_at))
       let feature = mostRecentFeatures[0]
+      let sortedEvents = action.payload.sort((event1, event2) => new Date(event1.date) - new Date(event2.date))
 
       return {loading: false, events: action.payload, featuredEvent: feature};
 
       case 'FEATURE_EVENT':
         return {
           events: [
-            ...state.events
+            ...sortedEvents
           ],
           featuredEvent: action.event
         }
