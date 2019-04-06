@@ -24,11 +24,9 @@ class RunsContainer extends Component {
         <div>
           <Container>
             <Row>
-              <Col md={{ span: 4, offset: 4 }}>
+              <Col md={4}>
                 <RunForm postRun={this.props.postRun} />
               </Col>
-            </Row>
-            <Row>
               <Col md={{ span: 4, offset: 4 }}>
                 <RunsList runs={runs} />
               </Col>
