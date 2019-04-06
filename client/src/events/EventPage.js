@@ -1,15 +1,11 @@
-
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
 
 class EventPage extends Component {
-
-  componentDidMount() {
-
-  }
 
   constructor(props, context) {
     super(props, context)
@@ -18,7 +14,6 @@ class EventPage extends Component {
     }
     this.updateEventState = this.updateEventState.bind(this);
     this.toggleFeatured = this.toggleFeatured.bind(this);
-
   }
 
   toggleFeatured() {
@@ -30,10 +25,6 @@ class EventPage extends Component {
   updateEventState() {
     this.toggleFeatured();
     this.props.actions.setEvent(this.state.runEvent);
-  }
-
-  getFeaturedEvent() {
-
   }
 
   render() {
@@ -68,6 +59,10 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
+}
+
+EventPage.propTypes = {
+  event: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventPage);
