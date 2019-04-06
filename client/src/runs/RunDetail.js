@@ -8,7 +8,7 @@ import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
-class RunPage extends Component {
+class RunDetail extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
@@ -100,4 +100,4 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RunPage));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RunDetail));

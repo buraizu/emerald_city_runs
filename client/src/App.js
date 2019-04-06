@@ -15,7 +15,7 @@ import Header from './Header';
 import Home from './Home';
 import EventsContainer from './events/EventsContainer';
 import RunForm from './runs/RunForm';
-import RunPage from './runs/RunPage';
+import RunDetail from './runs/RunDetail';
 
 
 class App extends Component {
@@ -30,7 +30,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path='/events' component={EventsContainer} />
           <Route exact path='/runs' component={RunsContainer} />
-          <Route exact path='/runs/:id' component={RunPage} />
+          <Route exact path='/runs/:id' component={RunDetail} />
         </div>
       </Router>
     );
