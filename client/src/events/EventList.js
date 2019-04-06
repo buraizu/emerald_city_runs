@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import EventPage from './EventPage';
-import FeaturedEvent from './FeaturedEvent';
 
 const EventList = (props) => {
 
@@ -14,9 +13,7 @@ const EventList = (props) => {
 
   return (
     <div>
-      <div>
-        <FeaturedEvent feature={props.runEvents.featuredEvent} />
-      </div>
+      <h2>Check out the upcoming events!</h2>
       <ul>
         {displayEvents}
       </ul>
