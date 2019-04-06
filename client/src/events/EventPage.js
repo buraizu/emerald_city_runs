@@ -34,15 +34,13 @@ class EventPage extends Component {
         event={this.props.runEvent}
       >
         <h3>{this.props.runEvent.title}</h3>
-        <p>{this.props.runEvent.date}</p>
-        <a
-          href={this.props.runEvent.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {this.props.runEvent.title}
-        </a>
-        <br />
+        <p>Date: {this.props.runEvent.date}</p>
+        <p>
+          Event Home Page:
+          <a href={this.props.runEvent.url} target="_blank" rel="noopener noreferrer">
+              <span> {this.props.runEvent.title}</span>
+          </a>
+        </p>
         <button onClick={this.updateEventState}>Set your event</button>
       </li>
 

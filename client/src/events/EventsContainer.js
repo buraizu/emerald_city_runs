@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';   // need new action file
 import { bindActionCreators } from 'redux';
@@ -18,14 +19,18 @@ class EventsContainer extends Component {
   render() {
     return (
       <div>
-        <Col md={{ span: 4, offset: 2 }}>
-          <h2>Events Container</h2>
-        </Col>
-        <Col md={{ span: 4, offset: 2 }}>
-          <div>
-            <EventList runEvents={this.props.events} setEvent={this.props.setEvent} />
-          </div>
-        </Col>
+        <Row>
+          <Col md={{ span: 4, offset: 1 }}>
+            <div>
+              <EventList runEvents={this.props.events} setEvent={this.props.setEvent} />
+            </div>
+          </Col>
+          <Col md={{ span: 4, offset: 3}}>
+            <div>
+              <FeaturedEvent feature={this.props.events.featuredEvent} />
+            </div>
+          </Col>
+        </Row>
       </div>
       )
     }
