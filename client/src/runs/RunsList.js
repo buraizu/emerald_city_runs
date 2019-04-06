@@ -12,9 +12,14 @@ const RunsList = (props) => {
   }
 
   return (
-    <ul>
-      {displayRuns}
-    </ul>
+    <div>
+      <br />
+      <h3>Here are your runs</h3>
+      <br />
+      <ul>
+        {displayRuns}
+      </ul>
+    </div>
   )
 }
 

@@ -34,48 +34,51 @@ class RunForm extends Component {
 
   render() {
     return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <input
-          type="text"
-          onChange={(event) => this.handleOnChange(event)}
-          name="course"
-          value={this.state.course}
-          placeholder="course"
-        />
-        <br />
-        <input
-          type="text"
-          onChange={(event) => this.handleOnChange(event)}
-          name="distance"
-          value={this.state.distance}
-          placeholder="distance"
-        />
-        <br />
-        <input
-          type="text"
-          onChange={(event) => this.handleOnChange(event)}
-          name="time"
-          value={this.state.time}
-          placeholder="time"
-        />
-        <br />
-        <textarea
-          onChange={(event) => this.handleOnChange(event)}
-          name="review"
-          value={this.state.review}
-          placeholder="Please write a review"
-        />
-        <br />
-        <input
-          type="text"
-          onChange={(event) => this.handleOnChange(event)}
-          name="rating"
-          value={this.state.rating}
-          placeholder="rating"
-        />
-        <br />
-        <input type="submit" />
-      </form>
+      <div>
+        <h3>Log your latest run here</h3>
+        <form onSubmit={(event) => this.handleOnSubmit(event)}>
+          <input
+            type="text"
+            onChange={(event) => this.handleOnChange(event)}
+            name="course"
+            value={this.state.course}
+            placeholder="course"
+          />
+          <br />
+          <input
+            type="text"
+            onChange={(event) => this.handleOnChange(event)}
+            name="distance"
+            value={this.state.distance}
+            placeholder="distance"
+          />
+          <br />
+          <input
+            type="text"
+            onChange={(event) => this.handleOnChange(event)}
+            name="time"
+            value={this.state.time}
+            placeholder="time"
+          />
+          <br />
+          <textarea
+            onChange={(event) => this.handleOnChange(event)}
+            name="review"
+            value={this.state.review}
+            placeholder="Please write a review"
+          />
+          <br />
+          <input
+            type="text"
+            onChange={(event) => this.handleOnChange(event)}
+            name="rating"
+            value={this.state.rating}
+            placeholder="rating"
+          />
+          <br />
+          <input type="submit" />
+        </form>
+      </div>
     )
   }
 
