@@ -29,7 +29,7 @@ class App extends Component {
         <div>
           <Route exact path="/" component={Home} />
           <Route path='/events' component={EventsContainer} />
-          <Route path='/runs' component={RunsContainer} />
+          <Route exact path='/runs' component={RunsContainer} />
           <Route exact path='/runs/:id' component={RunPage} />
         </div>
       </Router>
