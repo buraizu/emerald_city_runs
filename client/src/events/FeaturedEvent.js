@@ -16,7 +16,7 @@ const FeaturedEvent = (props) => {
     return (
       <div>
         <h3>
-          Nothing here at the moment... head on over to
+          Nothing here at the moment... Head on over to
           <span> <Link to={'/events'}>Events</Link> </span>
           to find a local event!
         </h3>
