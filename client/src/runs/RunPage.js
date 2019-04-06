@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Col from 'react-bootstrap/Col';
 import RunForm from './RunForm';
 import EditRunForm from './EditRunForm';
 
@@ -56,27 +56,30 @@ class RunPage extends Component {
 
     if (this.state.isEditing) {
       return (
-        <div>
-          <h2>Edit Run</h2>
-          <EditRunForm
-            run={this.state.run}
-            onChange={this.updateRunState}
-            saveRun={this.saveRun}
-          />
-        </div>
+        <Col md={{ span: 4, offset: 5 }}>
+          <div>
+            <EditRunForm
+              run={this.state.run}
+              onChange={this.updateRunState}
+              saveRun={this.saveRun}
+            />
+          </div>
+        </Col>
       )
     }
     return (
-      <div>
-        <h3>RunPage</h3>
-        <h4>Course: {this.props.run.course}</h4>
-        <p>Distance: {this.props.run.distance}</p>
-        <p>Time: {this.props.run.time}</p>
-        <p>Review: {this.props.run.review}</p>
-        <p>Rating: {this.props.run.rating}</p>
-        <button onClick={this.toggleEdit}>edit</button>
-        <button onClick={this.deleteRun}>delete</button>
-      </div>
+      <Col md={{ span: 4, offset: 5 }}>
+        <div>
+          <h3>RunPage</h3>
+          <h4>Course: {this.props.run.course}</h4>
+          <p>Distance: {this.props.run.distance}</p>
+          <p>Time: {this.props.run.time}</p>
+          <p>Review: {this.props.run.review}</p>
+          <p>Rating: {this.props.run.rating}</p>
+          <button onClick={this.toggleEdit}>edit</button>
+          <button onClick={this.deleteRun}>delete</button>
+        </div>
+      </Col>
     )
   }
 }
