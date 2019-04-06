@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const LatestRun = (props) => {
   let run = props.runs.runs[0];
@@ -25,6 +26,10 @@ const LatestRun = (props) => {
     )
   }
 
+}
+
+LatestRun.propTypes = {
+  run: PropTypes.object
 }
 
 export default LatestRun;
