@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 const FeaturedEvent = (props) => {
   if(props.feature) {
@@ -12,7 +13,13 @@ const FeaturedEvent = (props) => {
     )
   } else {
     return (
-      <div>Choose an event to train for</div>
+      <div>
+        <h3>
+          Nothing here at the moment... head on over to
+          <span> <Link to={'/events'}>Events</Link> </span>
+          to find a local event!
+        </h3>
+      </div>
     )
   }
 
