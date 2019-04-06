@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import RunsList from './RunsList';
 import RunForm from './RunForm';
@@ -21,10 +22,7 @@ class RunsContainer extends Component {
         <div>
           <h2>Runs Container</h2>
           <RunForm postRun={this.props.postRun} />
-          <RunsList runs={runs} handleDelete={this.props.handleDelete} />
-          <div>
-            {this.props.children}
-          </div>
+          <RunsList runs={runs} />
         </div>
       )
     }
@@ -39,6 +37,11 @@ class RunsContainer extends Component {
 
  function mapDispatchToProps(dispatch) {
    return { actions: bindActionCreators(actions, dispatch) }
+ }
+
+ RunsContainer.propTypes = {
+   // runs: PropTypes.object.isRequired,
+   postRun: PropTypes.func.isRequired
  }
 
 export default connect (mapStateToProps, {...actions})(RunsContainer);

@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const Run = ({run}) => {
 
@@ -12,6 +12,10 @@ const Run = ({run}) => {
     </div>
   )
 
+}
+
+Run.propTypes = {
+  run: PropTypes.object.isRequired
 }
 
 export default Run;

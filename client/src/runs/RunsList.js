@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import Run from './Run';
 
 const RunsList = (props) => {
@@ -16,6 +16,10 @@ const RunsList = (props) => {
       {displayRuns}
     </ul>
   )
+}
+
+RunsList.propTypes = {
+  // runs: PropTypes.object.isRequired
 }
 
 export default RunsList;
