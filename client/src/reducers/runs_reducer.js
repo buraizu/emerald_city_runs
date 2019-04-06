@@ -27,7 +27,11 @@ export default function runsReducer(state = { loading: false, runs: [] }, action
       const newState = Object.assign([], state.runs.filter(run => {
         return run.id != idOfRunToDelete
       }));
-      return newState;
+      return {
+        runs: [
+          ...newState
+        ]
+      }
 
     default:
       return state;
