@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { connect } from 'react-redux';
-import * as actions from '../actions/eventActions';   // need new action file
+import * as actions from '../actions/actions';  
 import EventList from './EventList';
 import FeaturedEvent from './FeaturedEvent';
 

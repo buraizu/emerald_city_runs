@@ -7,7 +7,7 @@ import RunsList from './RunsList';
 import RunForm from './RunForm';
 
 import { connect } from 'react-redux';
-import * as actions from '../actions/eventActions';  // need new actions file
+import * as actions from '../actions/actions';
 
 class RunsContainer extends Component {
 
