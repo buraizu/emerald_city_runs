@@ -7,7 +7,7 @@ const LatestRun = (props) => {
   if(run) {
     return (
       <div>
-        <h2>Your latest run</h2>
+        <h2>Your latest run: </h2>
         <h3>Course: {run.course}</h3>
         <h3>Distance: {run.distance}</h3>
         <Link to={'/runs/' + run.id}>Details</Link>
