@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
-import RunForm from './RunForm';
 import EditRunForm from './EditRunForm';
 
 import { connect } from 'react-redux';
@@ -46,7 +45,7 @@ class RunDetail extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.props.run.id != nextProps.run.id) {
+    if(this.props.run.id !== nextProps.run.id) {
       this.setState({run: nextProps.run});
     }
     this.setState({saving: false, isEditing: false});
@@ -90,7 +89,7 @@ function mapStateToProps(state, ownProps) {
   const runId = ownProps.match.params.id;
 
   if(state.runs.runs.length > 0) {
-    run = Object.assign({}, state.runs.runs.find(run => run.id == runId))
+    run = Object.assign({}, state.runs.runs.find(run => run.id === parseInt(runId)))
   }
 
   return {run: run}

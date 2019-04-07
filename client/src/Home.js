@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions/eventActions';
-import { bindActionCreators } from 'redux';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 
-import EventsContainer from './events/EventsContainer';
 import FeaturedEvent from './events/FeaturedEvent';
-import RunsContainer from './runs/RunsContainer';
 import LatestRun from './runs/LatestRun';
 
 class Home extends Component {
-
-  constructor(props) {
-    super(props);
-  };
 
   componentDidMount() {
     this.props.fetchEvents();
@@ -53,10 +46,6 @@ const mapStateToProps = (state) => {
     runs: state.runs,
     events: state.events
   }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(actions, dispatch) }
 }
 
 export default connect(mapStateToProps, {...actions})(Home);

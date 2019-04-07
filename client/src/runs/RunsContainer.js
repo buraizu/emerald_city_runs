@@ -5,11 +5,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import RunsList from './RunsList';
 import RunForm from './RunForm';
-import Run from './Run';
 
 import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions';  // need new actions file
-import { bindActionCreators } from 'redux';
 
 class RunsContainer extends Component {
 
@@ -42,10 +40,6 @@ class RunsContainer extends Component {
    return {
      runs: state.runs
    }
- }
-
- function mapDispatchToProps(dispatch) {
-   return { actions: bindActionCreators(actions, dispatch) }
  }
 
  RunsContainer.propTypes = {
