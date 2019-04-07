@@ -7,8 +7,8 @@ import { bindActionCreators } from 'redux';
 
 class EventDetail extends Component {
 
-  constructor(props, context) {
-    super(props, context)
+  constructor(props) {
+    super(props)
     this.state = {
       runEvent: this.props.event
     }
@@ -48,14 +48,14 @@ class EventDetail extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
+const mapStateToProps = (state, ownProps) => {
   const eventId = ownProps.runEvent.id;
   let event = Object.assign({}, state.events.events.find(event => event.id == eventId))
 
   return {event: event}
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 

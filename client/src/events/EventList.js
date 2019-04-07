@@ -13,12 +13,13 @@ const EventList = (props) => {
 
   return (
     <div>
-      <h2>Check out the upcoming events!</h2>
+      <h3>Upcoming Events</h3>
       <ul>
         {displayEvents}
       </ul>
     </div>
   );
+  
 }
 
 EventList.propTypes = {
