@@ -89,6 +89,5 @@ export const deleteRun = (run) => {
   return function(dispatch) {
     return fetch(`/api/runs/${run.id}`, data)
       .then(dispatch({type: 'DELETE_RUN', run: run}))
-      .then(() => console.log('whoa dude'))
     }
 }
