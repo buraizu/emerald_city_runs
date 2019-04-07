@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from './actions/eventActions.js';   // need new action file
+import * as actions from './actions/eventActions';
 import { bindActionCreators } from 'redux';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -13,10 +13,9 @@ import LatestRun from './runs/LatestRun';
 
 class Home extends Component {
 
-  constructor(props, context) {
-    super(props, context);
-
-    };
+  constructor(props) {
+    super(props);
+  };
 
   componentDidMount() {
     this.props.fetchEvents();
@@ -56,7 +55,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
