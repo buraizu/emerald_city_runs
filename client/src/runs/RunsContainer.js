@@ -8,7 +8,7 @@ import RunForm from './RunForm';
 import Run from './Run';
 
 import { connect } from 'react-redux';
-import * as actions from '../actions/eventActions.js';  // need new actions file
+import * as actions from '../actions/eventActions';  // need new actions file
 import { bindActionCreators } from 'redux';
 
 class RunsContainer extends Component {
