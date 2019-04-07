@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/eventActions.js';  // need new actions file
 import { bindActionCreators } from 'redux';
 
-class EventPage extends Component {
+class EventDetail extends Component {
 
   constructor(props, context) {
     super(props, context)
@@ -59,8 +59,8 @@ function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(actions, dispatch) }
 }
 
-EventPage.propTypes = {
+EventDetail.propTypes = {
   event: PropTypes.object.isRequired
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventPage);
+export default connect(mapStateToProps, mapDispatchToProps)(EventDetail);
