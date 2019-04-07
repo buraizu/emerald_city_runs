@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import EventPage from './EventPage';
+import EventDetail from './EventDetail';
 
 const EventList = (props) => {
 
   console.log(props);
 
   const displayEvents = props.runEvents.events.map((event, index) => {
-    return <EventPage key={index} runEvent={event} />
+    return <EventDetail key={index} runEvent={event} />
   })
 
   return (
