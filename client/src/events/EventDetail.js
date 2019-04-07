@@ -50,7 +50,7 @@ class EventDetail extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   const eventId = ownProps.runEvent.id;
-  let event = Object.assign({}, state.events.events.find(event => event.id == eventId))
+  let event = Object.assign({}, state.events.events.find(event => event.id === eventId))
 
   return {event: event}
 }

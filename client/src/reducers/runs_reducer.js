@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux';
-
 export default function runsReducer(state = { loading: false, runs: [] }, action) {
 
   switch(action.type) {
@@ -26,7 +24,7 @@ export default function runsReducer(state = { loading: false, runs: [] }, action
     case 'DELETE_RUN':
       const idOfRunToDelete = action.run.id
       const newState = Object.assign([], state.runs.filter(run => {
-        return run.id != idOfRunToDelete
+        return run.id !== idOfRunToDelete
       }));
       return {
         runs: [
