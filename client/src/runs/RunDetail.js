@@ -3,7 +3,7 @@ import Col from 'react-bootstrap/Col';
 import EditRunForm from './EditRunForm';
 
 import { connect } from 'react-redux';
-import * as actions from '../actions/eventActions';  // need new actions file
+import * as actions from '../actions/actions';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 

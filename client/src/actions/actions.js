@@ -1,4 +1,4 @@
-export function fetchEvents() {
+export const fetchEvents = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_EVENTS' });
     return fetch('/api/events')
@@ -9,7 +9,28 @@ export function fetchEvents() {
   }
 }
 
-export function fetchRuns() {
+export const setEvent = (feature) => {
+  feature.updated_at = new Date();
+  let featureId = feature.id;
+  let data = {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(feature)
+  }
+
+  return function(dispatch) {
+    return fetch(`/api/events/${featureId}`, data)
+      .then(response => response.json())
+      .then(responseJson => {
+        dispatch({type: 'FEATURE_EVENT', event: responseJson})
+      })
+  }
+}
+
+export const fetchRuns = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_RUNS'});
     return fetch('/api/runs')
@@ -20,7 +41,7 @@ export function fetchRuns() {
   }
 }
 
-export function postRun(run) {
+export const postRun = (run) => {
 
   let data = {
     method: 'POST',
@@ -40,7 +61,7 @@ export function postRun(run) {
   }
 }
 
-export function updateRun(run) {
+export const updateRun = (run) => {
   let runId = run.id;
   let data = {
     method: 'PUT',
@@ -60,8 +81,7 @@ export function updateRun(run) {
   }
 }
 
-export function deleteRun(run) {
-
+export const deleteRun = (run) => {
   let data = {
     method: 'DELETE',
   }
@@ -70,29 +90,5 @@ export function deleteRun(run) {
     return fetch(`/api/runs/${run.id}`, data)
       .then(dispatch({type: 'DELETE_RUN', run: run}))
       .then(() => console.log('whoa dude'))
-
-  }
-    return;   // ?
-
-}
-
-export function setEvent(feature) {
-  feature.updated_at = new Date();
-  let featureId = feature.id;
-  let data = {
-    method: 'PUT',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(feature)
-  }
-
-  return function(dispatch) {
-    return fetch(`/api/events/${featureId}`, data)
-      .then(response => response.json())
-      .then(responseJson => {
-        dispatch({type: 'FEATURE_EVENT', event: responseJson})
-      })
-  }
+    }
 }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import * as actions from '../actions/eventActions.js';  // need new actions file
+import * as actions from '../actions/actions.js';
 import { bindActionCreators } from 'redux';
 
 class EventDetail extends Component {
