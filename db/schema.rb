@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_02_082408) do
+ActiveRecord::Schema.define(version: 2019_04_08_224602) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_04_02_082408) do
 
   create_table "runs", force: :cascade do |t|
     t.string "course"
-    t.integer "distance"
+    t.float "distance"
     t.integer "time"
     t.text "review"
     t.integer "rating"
