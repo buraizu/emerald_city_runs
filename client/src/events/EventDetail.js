@@ -32,7 +32,7 @@ class EventDetail extends Component {
       <div
         key={this.props.key}
         event={this.props.runEvent}
-        className="feature"
+        className="feature event-feature"
       >
         <h3>{this.props.runEvent.title}</h3>
         <p>Date: {this.props.runEvent.date}</p>
