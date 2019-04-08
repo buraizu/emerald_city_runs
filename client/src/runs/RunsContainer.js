@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import RunsList from './RunsList';
@@ -20,16 +19,14 @@ class RunsContainer extends Component {
 
       return (
         <div>
-          <Container>
-            <Row>
-              <Col md={4}>
-                <RunForm postRun={this.props.postRun} />
-              </Col>
-              <Col md={{ span: 4, offset: 4 }}>
-                <RunsList runs={runs} />
-              </Col>
-            </Row>
-          </Container>
+          <Row>
+            <Col md={4}>
+              <RunForm postRun={this.props.postRun} />
+            </Col>
+            <Col md={{ span: 4, offset: 4 }}>
+              <RunsList runs={runs} />
+            </Col>
+          </Row>
         </div>
       )
     }
@@ -43,7 +40,7 @@ class RunsContainer extends Component {
  }
 
  RunsContainer.propTypes = {
-   // runs: PropTypes.object.isRequired,
+   runs: PropTypes.object.isRequired,
    postRun: PropTypes.func.isRequired
  }
 

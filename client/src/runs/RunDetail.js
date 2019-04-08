@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import EditRunForm from './EditRunForm';
-
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 class RunDetail extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
       isEditing: false,
       saving: false,
@@ -83,8 +83,7 @@ class RunDetail extends Component {
   }
 }
 
-function mapStateToProps(state, ownProps) {
-
+const mapStateToProps = (state, ownProps) => {
   let run = {course: '', distance: '', time: '', review: '', rating: ''}
   const runId = ownProps.match.params.id;
 
@@ -95,8 +94,12 @@ function mapStateToProps(state, ownProps) {
   return {run: run}
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return { actions: bindActionCreators(actions, dispatch) }
+}
+
+RunDetail.propTypes = {
+  run: PropTypes.object.isRequired
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RunDetail));
