@@ -18,7 +18,7 @@ class RunsContainer extends Component {
     const runs = this.props.runs;
 
       return (
-        <div>
+        <div className="background">
           <Row>
             <Col md={4}>
               <RunForm postRun={this.props.postRun} />
