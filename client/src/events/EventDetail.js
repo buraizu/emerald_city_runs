@@ -29,9 +29,10 @@ class EventDetail extends Component {
 
   render() {
     return (
-      <li
+      <div
         key={this.props.key}
         event={this.props.runEvent}
+        className="feature"
       >
         <h3>{this.props.runEvent.title}</h3>
         <p>Date: {this.props.runEvent.date}</p>
@@ -42,7 +43,7 @@ class EventDetail extends Component {
           </a>
         </p>
         <button onClick={this.updateEventState}>Set your event</button>
-      </li>
+      </div>
 
     )
   }

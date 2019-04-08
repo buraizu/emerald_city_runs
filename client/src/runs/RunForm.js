@@ -34,7 +34,7 @@ class RunForm extends Component {
 
   render() {
     return(
-      <div>
+      <div className="feature">
         <h3>Log your latest run here</h3>
         <form onSubmit={(event) => this.handleOnSubmit(event)}>
           <input

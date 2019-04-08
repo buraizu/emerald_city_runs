@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Run = ({run}) => {
 
   return (
-    <div>
+    <div className="feature">
       <h3>Course: {run.course}</h3>
       <Link to={'/runs/' + run.id}>Details</Link>
       <p>------------</p>

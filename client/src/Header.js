@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 
 const Header = () => (
   <header>
-    <div>
+    <div className="feature">
       <Row className="justify-content-md-center">
         <Col xs lg="1">
           <span><NavLink exact to="/">Home</NavLink></span>
