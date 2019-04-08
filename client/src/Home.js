@@ -24,7 +24,7 @@ class Home extends Component {
             <div className="feature">
               <h1>Welcome to Emerald City Runs</h1>
               <h3>Your source for upcoming Seattle running events</h3>
-              <p>Get inspired to train for something, or simply keep track of your runs</p>
+              <p>Get inspired to train for something, or simply keep track of your runs!</p>
             </div>
           </Row>
           <Row>

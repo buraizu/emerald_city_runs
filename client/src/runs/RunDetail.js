@@ -71,8 +71,8 @@ class RunDetail extends Component {
         <div>
           <h3>Run Details</h3>
           <h4>Course: {this.props.run.course}</h4>
-          <p>Distance: {this.props.run.distance}</p>
-          <p>Time: {this.props.run.time}</p>
+          <p>Distance: {this.props.run.distance} miles</p>
+          <p>Time: {this.props.run.time} minutes</p>
           <p>Review: {this.props.run.review}</p>
           <p>Rating: {this.props.run.rating}</p>
           <button onClick={this.toggleEdit}>edit</button>
