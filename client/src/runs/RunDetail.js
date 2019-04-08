@@ -69,7 +69,7 @@ class RunDetail extends Component {
     return (
       <Col md={{ span: 4, offset: 5 }}>
         <div>
-          <h3>RunPage</h3>
+          <h3>Run Details</h3>
           <h4>Course: {this.props.run.course}</h4>
           <p>Distance: {this.props.run.distance}</p>
           <p>Time: {this.props.run.time}</p>
@@ -101,7 +101,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 RunDetail.propTypes = {
-  run: PropTypes.object.isRequired
+  run: PropTypes.object.isRequired,
+  actions: PropTypes.objectOf(PropTypes.func)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RunDetail);
