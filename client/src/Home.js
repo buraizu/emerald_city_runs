@@ -37,7 +37,6 @@ class Home extends Component {
               <h3><Link to={'/runs'}>RUNS</Link></h3>
             </Col>
           </Row>
-          <img src={'/milkovi.jpg'} />
         </Container>
       </div>
     )

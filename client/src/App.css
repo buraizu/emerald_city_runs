@@ -32,6 +32,10 @@
   }
 }
 
-h3 {
-  color: #360;
+.background {
+  background-image: url('/milkovi.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }

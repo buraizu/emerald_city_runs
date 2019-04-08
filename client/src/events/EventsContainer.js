@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { connect } from 'react-redux';
-import * as actions from '../actions/actions';  
+import * as actions from '../actions/actions';
 import EventList from './EventList';
 import FeaturedEvent from './FeaturedEvent';
 
@@ -16,7 +16,7 @@ class EventsContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="background">
         <Row>
           <Col md={{ span: 4, offset: 1 }}>
             <div>
