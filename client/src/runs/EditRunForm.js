@@ -8,6 +8,7 @@ class EditRunForm extends Component {
       <div>
         <h3>Edit Run</h3>
         <form onSubmit={this.props.saveRun}>
+          <span>Course: </span>
           <input
             type="text"
             onChange={this.props.onChange}
@@ -16,6 +17,7 @@ class EditRunForm extends Component {
             placeholder="course"
           />
           <br />
+          <span>Distance: </span>
           <input
             type="text"
             onChange={this.props.onChange}
@@ -24,6 +26,7 @@ class EditRunForm extends Component {
             placeholder="distance"
           />
           <br />
+          <span>Time: </span>
           <input
             type="text"
             onChange={this.props.onChange}
@@ -32,6 +35,7 @@ class EditRunForm extends Component {
             placeholder="time"
           />
           <br />
+          <span>Review: </span>
           <textarea
             onChange={this.props.onChange}
             name="review"
@@ -39,6 +43,7 @@ class EditRunForm extends Component {
             placeholder="Please write a review"
           />
           <br />
+          <span>Rating: </span>
           <input
             type="text"
             onChange={this.props.onChange}
