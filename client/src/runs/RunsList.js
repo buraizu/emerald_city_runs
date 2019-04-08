@@ -14,7 +14,7 @@ const RunsList = (props) => {
   return (
     <div>
       <br />
-      <h3>Your runs</h3>
+      <h3 className="displayText">Your runs</h3>
       <br />
       <ul>
         {displayRuns}

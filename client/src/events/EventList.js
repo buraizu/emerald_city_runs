@@ -13,13 +13,13 @@ const EventList = (props) => {
 
   return (
     <div>
-      <h3>Upcoming Events</h3>
+      <h3 className="displayText">Upcoming Events</h3>
       <ul>
         {displayEvents}
       </ul>
     </div>
   );
-  
+
 }
 
 EventList.propTypes = {
