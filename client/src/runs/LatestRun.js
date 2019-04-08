@@ -6,7 +6,7 @@ const LatestRun = (props) => {
   let run = props.runs.runs[0];
   if(run) {
     return (
-      <div>
+      <div className="feature">
         <h2>Your latest run: </h2>
         <h3>Course: {run.course}</h3>
         <h3>Distance: {run.distance}</h3>
