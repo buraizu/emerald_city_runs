@@ -18,7 +18,7 @@ class Home extends Component {
   render() {
 
     return (
-      <div>
+      <div className="background">
         <Container>
           <Row className="justify-content-md-center">
             <div>
@@ -37,6 +37,7 @@ class Home extends Component {
               <h3><Link to={'/runs'}>RUNS</Link></h3>
             </Col>
           </Row>
+          <img src={'/milkovi.jpg'} />
         </Container>
       </div>
     )
