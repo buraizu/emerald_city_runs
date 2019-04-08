@@ -4,7 +4,7 @@ import * as actions from './actions/actions';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-
+import { Link } from "react-router-dom";
 import FeaturedEvent from './events/FeaturedEvent';
 import LatestRun from './runs/LatestRun';
 
@@ -30,9 +30,11 @@ class Home extends Component {
           <Row>
             <Col md={4}>
               <FeaturedEvent feature={this.props.events.featuredEvent} />
+              <h3><Link to={'/events'}>EVENTS</Link></h3>
             </Col>
             <Col md={{ span: 4, offset: 4 }}>
               <LatestRun runs={this.props.runs} />
+              <h3><Link to={'/runs'}>RUNS</Link></h3>
             </Col>
           </Row>
         </Container>

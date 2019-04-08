@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions';
 import { bindActionCreators } from 'redux';
-import { withRouter } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class RunDetail extends Component {
   constructor(props) {
@@ -77,6 +77,8 @@ class RunDetail extends Component {
           <p>Rating: {this.props.run.rating}</p>
           <button onClick={this.toggleEdit}>edit</button>
           <button onClick={this.deleteRun}>delete</button>
+          <p><Link to={'/runs'}>Back to My Runs</Link></p>
+          <p><Link to={'/'}>Home</Link></p>
         </div>
       </Col>
     )
@@ -102,4 +104,4 @@ RunDetail.propTypes = {
   run: PropTypes.object.isRequired
 }
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(RunDetail));
+export default connect(mapStateToProps, mapDispatchToProps)(RunDetail);
