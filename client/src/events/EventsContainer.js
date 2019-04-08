@@ -24,7 +24,7 @@ class EventsContainer extends Component {
             </div>
           </Col>
           <Col md={{ span: 4, offset: 3}}>
-            <h3>Featured Event: </h3>
+            <h3 className="displayText">Featured Event: </h3>
             <div className="feature">
               <FeaturedEvent feature={this.props.events.featuredEvent} />
             </div>

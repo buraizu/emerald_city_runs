@@ -30,11 +30,15 @@ class Home extends Component {
           <Row>
             <Col md={4}>
               <FeaturedEvent feature={this.props.events.featuredEvent} />
-              <h3><Link to={'/events'}>EVENTS</Link></h3>
+              <div className="feature">
+                <h3 className="displayText"><Link to={'/events'}>EVENTS</Link></h3>
+              </div>
             </Col>
             <Col md={{ span: 4, offset: 4 }}>
               <LatestRun runs={this.props.runs} />
-              <h3><Link to={'/runs'}>RUNS</Link></h3>
+              <div className="feature">
+                <h3 className="displayText"><Link to={'/runs'}>RUNS</Link></h3>
+              </div>
             </Col>
           </Row>
         </Container>

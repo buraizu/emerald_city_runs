@@ -46,3 +46,7 @@
   border: 3px solid #067f2e;
   border-radius: 10px;
 }
+
+.displayText {
+  color: rgb(237, 252, 242);
+}
