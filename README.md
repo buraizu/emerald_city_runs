@@ -2,33 +2,33 @@ EMERALD CITY RUNS
 
 Emerald City Runs will get you connected to upcoming running events in the Seattle area, and help you track your progress as you train.
 
-Getting Started
+GETTING STARTED
 
 Clone and download the project directory at https://github.com/buraizu/emerald_city_runs.  Navigate into the project directory with 'cd emerald_city_runs', then run 'npm install' to download the project dependencies.  Finally, 'rake start' to boot up the App.
 
-Built With
+BUILT WITH
 
 React
 Redux
 Ruby on Rails
 Thunk Middleware
 
-Contributing
+CONTRIBUTING
 
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-Versioning
-
+VERSIONING
+// <FeaturedEvent feature={this.props.events.featuredEvent} />
 We use SemVer for versioning.
 
-Authors
+AUTHOR
 
 Bryce Eadie
 
-License
+LICENSE
 
 This project is licensed under the MIT License
 
-Acknowledgements
+ACKNOWLEDGEMENTS
 
 Background Photo by MILKOVÍ on Unsplash
