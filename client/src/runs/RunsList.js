@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Run from './Run';
 
 const RunsList = (props) => {
-  let displayRuns = <li>Nothing to display at the moment. Try refreshing.</li>
+  let displayRuns = <div>Nothing to display at the moment. Try refreshing.</div>
 
   if(props.runs.runs !== undefined) {
     displayRuns = props.runs.runs.map((run, index) =>
@@ -16,9 +16,9 @@ const RunsList = (props) => {
       <br />
       <h3 className="displayText">Your runs</h3>
       <br />
-      <ul>
+      <div>
         {displayRuns}
-      </ul>
+      </div>
     </div>
   )
 }
