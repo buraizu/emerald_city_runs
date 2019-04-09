@@ -18,7 +18,7 @@ CONTRIBUTING
 Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
 VERSIONING
-// <FeaturedEvent feature={this.props.events.featuredEvent} />
+
 We use SemVer for versioning.
 
 AUTHOR
