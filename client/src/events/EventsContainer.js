@@ -14,6 +14,16 @@ class EventsContainer extends Component {
     this.props.fetchEvents();
   }
 
+  hasFeaturedEvent = () => {
+    if(this.props.events.featuredEvent) {
+      return <FeaturedEvent feature={this.props.events.featuredEvent} />
+    } else {
+      return (
+        <h3>Ready to run? Choose an event!</h3>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="background">
@@ -26,7 +36,7 @@ class EventsContainer extends Component {
           <Col md={{ span: 4, offset: 3}}>
             <h3 className="displayText">Featured Event: </h3>
             <div className="feature">
-              <FeaturedEvent feature={this.props.events.featuredEvent} />
+              {this.hasFeaturedEvent()}
             </div>
           </Col>
         </Row>
