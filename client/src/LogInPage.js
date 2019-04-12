@@ -28,10 +28,28 @@ class LogInPage extends Component {
     return (
       <div>
         <form>
-        
+          <input
+            type="text"
+            onChange={this.props.onChange}
+            name="email"
+            label="email"
+            value={this.state.credentials.email}
+          />
+          <input
+            type="submit"
+            onClick={this.onSave}
+          />
         </form>
       </div>
     )
   }
 
 }
+
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(null, {...actions})(LogInPage);
