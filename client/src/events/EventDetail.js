@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
-import * as actions from '../actions/index.js';
-import { bindActionCreators } from 'redux';
+import * as actions from '../actions/index';
 
 class EventDetail extends Component {
 
@@ -24,7 +23,7 @@ class EventDetail extends Component {
 
   updateEventState() {
     this.toggleFeatured();
-    this.props.actions.setEvent(this.state.runEvent);
+    this.props.setEvent(this.state.runEvent);
   }
 
   render() {
@@ -56,12 +55,8 @@ const mapStateToProps = (state, ownProps) => {
   return {event: event}
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return { actions: bindActionCreators(actions, dispatch) }
-}
-
 EventDetail.propTypes = {
   event: PropTypes.object.isRequired
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventDetail);
+export default connect(mapStateToProps, {...actions})(EventDetail);
