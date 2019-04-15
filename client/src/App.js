@@ -11,12 +11,16 @@ import Header from './Header';
 import Home from './Home';
 import EventsContainer from './events/EventsContainer';
 import RunDetail from './runs/RunDetail';
+import LogInPage from './LogInPage';
+import SignUp from './SignUp';
 
 const App = () => {
   return (
     <Router>
       <Header />
       <div>
+        <Route path="/login" component={LogInPage} />
+        <Route path="/signup" component={SignUp} />
         <Route exact path="/" component={Home} />
         <Route path='/events' component={EventsContainer} />
         <Route exact path='/runs' component={RunsContainer} />

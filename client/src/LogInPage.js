@@ -1,43 +1,51 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions/actions';
+import * as actions from './actions/index';
 
 class LogInPage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { credentials: {email: '', password: ''}}
-    this.onChange = this.onChange.bind(this);
-    this.onSave = this.onSave.bind(this);
+    this.state = { email: '', password: '' }
+
+
   }
 
-  onChange(event) {
-    const field = event.target.name;
-    const credentials = this.state.credentials;
-    credentials[field] = event.target.value;
-    return this.setState({credentials: credentials})
+  handleOnChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
 
-  onSave(event) {
+  handleOnSave = (event) => {
     event.preventDefault();
-    this.props.actions.logInUser(this.state.credentials);
+    this.props.logInUser(this.state);
   }
 
   render() {
     return (
       <div>
         <form>
+          <span>Email: </span>
           <input
             type="text"
-            onChange={this.props.onChange}
+            onChange={this.handleOnChange}
             name="email"
-            label="email"
-            value={this.state.credentials.email}
+            value={this.state.email}
           />
+          <br />
+          <span>Password: </span>
+          <input
+            type="text"
+            onChange={this.handleOnChange}
+            name="password"
+            value={this.state.password}
+          />
+          <br />
           <input
             type="submit"
-            onClick={this.onSave}
+            onClick={this.handleOnSave}
           />
         </form>
       </div>
