@@ -52,6 +52,7 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.4.1)
       msgpack (~> 1.0)
@@ -108,6 +109,11 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     jsonapi-renderer (0.2.0)
+    jwt (1.5.6)
+    knock (2.1.1)
+      bcrypt (~> 3.1)
+      jwt (~> 1.5)
+      rails (>= 4.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -234,6 +240,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -243,6 +250,8 @@ DEPENDENCIES
   foreman (~> 0.82.0)
   jbuilder (~> 2.5)
   jquery-rails
+  jwt
+  knock
   listen (>= 3.0.5, < 3.2)
   pry
   puma (~> 3.11)
