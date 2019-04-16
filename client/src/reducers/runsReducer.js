@@ -1,4 +1,4 @@
-export default function runsReducer(state = { loading: false, runs: [] }, action) {
+export default (state = { loading: false, runs: [] }, action) => {
 
   switch(action.type) {
     case 'LOADING_RUNS':
