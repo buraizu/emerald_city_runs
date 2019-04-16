@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from './actions/index';
+import * as actions from '../actions/index';
 
-class LogInPage extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
 
@@ -17,14 +17,20 @@ class LogInPage extends Component {
     });
   }
 
-  handleOnSave = (event) => {
-    event.preventDefault();
-    this.props.logInUser(this.state);
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.props.signup(this.state)) {
+      this.props.history.push('/')
+      window.alert("Thank you for signing up.")
+    } else {
+      window.alert("We're having issues creating your account.")
+    }
   }
 
   render() {
     return (
       <div>
+        <h1>Sign Up</h1>
         <form>
           <span>Email: </span>
           <input
@@ -44,7 +50,7 @@ class LogInPage extends Component {
           <br />
           <input
             type="submit"
-            onClick={this.handleOnSave}
+            onClick={this.handleSubmit}
           />
         </form>
       </div>
@@ -53,4 +59,4 @@ class LogInPage extends Component {
 
 }
 
-export default connect(null, {...actions})(LogInPage);
+export default connect(null, {...actions})(SignUp);
