@@ -7,7 +7,6 @@ import * as actions from '../actions/index';
 import EventList from './EventList';
 import FeaturedEvent from './FeaturedEvent';
 
-
 class EventsContainer extends Component {
 
   componentDidMount() {
