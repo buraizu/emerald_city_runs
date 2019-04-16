@@ -1,4 +1,4 @@
-export default function eventsReducer(state = { loading: false, events: [], featuredEvent: null}, action) {
+export default (state = { loading: false, events: [], featuredEvent: null}, action) => {
 
   switch(action.type) {
 
