@@ -20,7 +20,7 @@ class Home extends Component {
     return (
       <div className="background">
         <Container>
-          <Row className="justify-content-md-center">
+          <Row className="justify-content-md-center text-center">
             <div className="feature">
               <h1>Welcome to Emerald City Runs</h1>
               <h3>Your source for upcoming Seattle running events</h3>
