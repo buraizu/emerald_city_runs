@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-
 import {
   BrowserRouter as Router,
   Route
 } from "react-router-dom";
-
 import RunsContainer from './runs/RunsContainer';
 import Header from './Header';
 import Home from './Home';
@@ -30,7 +28,5 @@ const App = () => {
   );
 
 }
-
-
 
 export default App;
