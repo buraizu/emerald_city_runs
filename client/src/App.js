@@ -11,8 +11,8 @@ import Header from './Header';
 import Home from './Home';
 import EventsContainer from './events/EventsContainer';
 import RunDetail from './runs/RunDetail';
-import LogInPage from './LogInPage';
-import SignUp from './SignUp';
+import LogInPage from './users/LogInPage';
+import SignUp from './users/SignUp';
 
 const App = () => {
   return (
