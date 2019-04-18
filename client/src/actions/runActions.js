@@ -1,7 +1,7 @@
 export const fetchRuns = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_RUNS'});
-    return fetch('/api/runs')
+    return fetch('/api/runs', {headers: {"Authorization": `Bearer ${localStorage.token}`}})
       .then(response => response.json())
       .then(responseJson => {
         dispatch({ type: 'FETCH_RUNS', payload: responseJson })
@@ -10,10 +10,10 @@ export const fetchRuns = () => {
 }
 
 export const postRun = (run) => {
-
   let data = {
     method: 'POST',
     headers: {
+      "Authorization": `Bearer ${localStorage.token}`,
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
@@ -34,6 +34,7 @@ export const updateRun = (run) => {
   let data = {
     method: 'PUT',
     headers: {
+      "Authorization": `Bearer ${localStorage.token}`,
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
@@ -52,6 +53,7 @@ export const updateRun = (run) => {
 export const deleteRun = (run) => {
   let data = {
     method: 'DELETE',
+    headers: {"Authorization": `Bearer ${localStorage.token}`}
   }
 
   return function(dispatch) {
