@@ -1,4 +1,5 @@
 class RunsController < ApplicationController
+  before_action :authenticate_user
 
   def index
     runs = Run.all
@@ -26,7 +27,7 @@ class RunsController < ApplicationController
   private
 
   def run_params
-    params.require(:run).permit(:course, :distance, :time, :review, :rating)
+    params.require(:run).permit(:course, :distance, :time, :review, :rating, :user_id)
   end
 
 end
