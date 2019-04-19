@@ -32,3 +32,17 @@ This project is licensed under the MIT License
 ACKNOWLEDGEMENTS
 
 Background Photo by MILKOVÍ on Unsplash
+
+// <button onClick={this.incrementScore}>Vote for this event</button>
+// <div>{this.state.count}</div>
+
+<div>
+  <p>{this.state.score}</p>
+</div>
+
+// incrementScore = () => {
+//   const newScore = this.state.score + 1
+//   this.setState({
+//     score: newScore
+//   });
+// }
