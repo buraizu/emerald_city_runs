@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
+import { withRouter } from 'react-router-dom';
 
 class LogInPage extends Component {
   constructor(props) {
     super(props);
-
     this.state = { email: '', password: '' }
-
-
   }
 
   handleOnChange = (event) => {
@@ -17,15 +15,17 @@ class LogInPage extends Component {
     });
   }
 
-  handleOnSave = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    this.props.authenticate(this.state);
+    if(this.props.authenticate(this.state)) {
+        this.props.history.push('/runs')
+      }
   }
 
   render() {
     return (
       <div>
-        <h2>Log In</h2>
+        <h3>Log In</h3>
         <form>
           <span>Email: </span>
           <input
@@ -45,7 +45,7 @@ class LogInPage extends Component {
           <br />
           <input
             type="submit"
-            onClick={this.handleOnSave}
+            onClick={this.handleSubmit}
           />
         </form>
       </div>
@@ -54,4 +54,4 @@ class LogInPage extends Component {
 
 }
 
-export default connect(null, {...actions})(LogInPage);
+export default LogInPage = withRouter(connect(null, {...actions})(LogInPage));
