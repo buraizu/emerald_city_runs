@@ -59,8 +59,7 @@ export const logInUser = (user) => {
   return function(dispatch) {
       return fetch(`/api/users`, data)
         .then(response => console.log(response))
-
-    }
+      }
 }
 
 export const authenticate = (credentials) => {
@@ -107,4 +106,13 @@ export const getUser = (credentials) => {
     .catch(error => {
       return error;
     });
+}
+
+export const logout = () => {
+  return dispatch => {
+    localStorage.clear();
+    return dispatch({
+      type: types.LOGOUT
+    });
+  }
 }
