@@ -4,15 +4,16 @@ import * as actions from './actions/index';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
-import { Link } from "react-router-dom";
-import FeaturedEvent from './events/FeaturedEvent';
-import LatestRun from './runs/LatestRun';
+import { Link } from 'react-router-dom';
+import LogInPage from './users/LogInPage';
+import SignUp from './users/SignUp';
+import EventList from './events/EventList';
 
 class Home extends Component {
 
   componentDidMount() {
     this.props.fetchEvents();
-    this.props.fetchRuns();
+    // this.props.fetchRuns();
   }
 
   render() {
@@ -29,16 +30,15 @@ class Home extends Component {
           </Row>
           <Row>
             <Col md={4}>
-              <FeaturedEvent feature={this.props.events.featuredEvent} />
               <div className="feature">
-                <h3 className="displayText"><Link to={'/events'}>EVENTS</Link></h3>
+                <LogInPage />
+              </div>
+              <div className="feature">
+                <SignUp />
               </div>
             </Col>
             <Col md={{ span: 4, offset: 4 }}>
-              <LatestRun runs={this.props.runs} />
-              <div className="feature">
-                <h3 className="displayText"><Link to={'/runs'}>RUNS</Link></h3>
-              </div>
+              <EventList runEvents={this.props.events} setEvent={this.props.setEvent} />
             </Col>
           </Row>
         </Container>
