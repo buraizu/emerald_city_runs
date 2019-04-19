@@ -7,13 +7,16 @@ const EventList = (props) => {
   console.log(props);
 
   const displayEvents = props.runEvents.events.map((event, index) => {
-    return <EventDetail key={index} runEvent={event} />
+    return (
+      <EventDetail key={index} runEvent={event} className="displayEvents"/>
+
+    )
   })
 
   return (
     <div>
       <h3 className="displayText">Upcoming Events</h3>
-      <ul>
+      <ul className="displayEvents">
         {displayEvents}
       </ul>
     </div>
