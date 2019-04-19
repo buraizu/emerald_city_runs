@@ -50,3 +50,7 @@
 .displayText {
   color: rgb(237, 252, 242);
 }
+
+.displayEvents {
+  display: inline;
+}
