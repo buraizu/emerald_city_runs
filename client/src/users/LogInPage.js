@@ -19,12 +19,13 @@ class LogInPage extends Component {
 
   handleOnSave = (event) => {
     event.preventDefault();
-    this.props.logInUser(this.state);
+    this.props.authenticate(this.state);
   }
 
   render() {
     return (
       <div>
+        <h2>Log In</h2>
         <form>
           <span>Email: </span>
           <input
