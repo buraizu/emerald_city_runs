@@ -6,6 +6,7 @@ import RunsList from './RunsList';
 import RunForm from './RunForm';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
+import { Link } from "react-router-dom";
 
 class RunsContainer extends Component {
 
@@ -26,6 +27,9 @@ class RunsContainer extends Component {
               <RunsList runs={runs} />
             </Col>
           </Row>
+          <div className="feature">
+            <Link to={'/user_profile'}>Back to User Profile</Link>
+          </div>
         </div>
       )
     }

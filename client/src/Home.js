@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import LogInPage from './users/LogInPage';
+import LogIn from './users/LogIn';
 import SignUp from './users/SignUp';
 import EventList from './events/EventList';
 
@@ -31,14 +31,14 @@ class Home extends Component {
           <Row>
             <Col md={4}>
               <div className="feature">
-                <LogInPage />
+                <LogIn />
               </div>
               <div className="feature">
                 <SignUp />
               </div>
             </Col>
             <Col md={{ span: 4, offset: 4 }}>
-              <EventList runEvents={this.props.events} setEvent={this.props.setEvent} />
+
             </Col>
           </Row>
         </Container>
@@ -55,3 +55,5 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {...actions})(Home);
+
+// <EventList runEvents={this.props.events} setEvent={this.props.setEvent} />
