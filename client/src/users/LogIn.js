@@ -18,7 +18,10 @@ class LogInPage extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     if(this.props.authenticate(this.state)) {
-        this.props.history.push('/runs')
+        this.props.history.push('/user_profile')
+        window.alert("You're logged in!")
+      } else {
+        window.alert("Unable to Log In with provided credentials")
       }
   }
 
