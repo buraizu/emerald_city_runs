@@ -41,7 +41,7 @@ class RunDetail extends Component {
 
   deleteRun(event) {
     this.props.actions.deleteRun(this.state.run)
-    this.props.history.push("/")
+    this.props.history.push("/user_profile")
   }
 
   componentWillReceiveProps(nextProps) {
