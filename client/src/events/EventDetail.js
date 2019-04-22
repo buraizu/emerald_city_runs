@@ -25,7 +25,7 @@ class EventDetail extends Component {
   setUserEvent() {
     const userEvent = this.props.runEvent;
     this.props.setEvent(userEvent)
-  
+    this.props.history.push('/user_events')
   }
 
   render() {
