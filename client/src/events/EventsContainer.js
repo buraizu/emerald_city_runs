@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import EventList from './EventList';
 import FeaturedEvent from './FeaturedEvent';
+import { Link } from 'react-router-dom';
 
 class EventsContainer extends Component {
 
@@ -39,6 +40,9 @@ class EventsContainer extends Component {
             </div>
           </Col>
         </Row>
+        <div className="feature">
+          <Link to={'/user_profile'}>User Profile</Link>
+        </div>
       </div>
       )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
+import { withRouter } from 'react-router-dom';
 
 class EventDetail extends Component {
 
@@ -10,7 +11,8 @@ class EventDetail extends Component {
     this.state = {
       runEvent: this.props.event
     }
-    this.updateEventState = this.updateEventState.bind(this);
+    // this.updateEventState = this.updateEventState.bind(this);
+    this.setUserEvent = this.setUserEvent.bind(this);
     this.toggleFeatured = this.toggleFeatured.bind(this);
   }
 
@@ -20,12 +22,14 @@ class EventDetail extends Component {
     return this.setState({runEvent: runEvent})
   }
 
-  updateEventState() {
-    this.toggleFeatured();
-    this.props.setEvent(this.state.runEvent);
+  setUserEvent() {
+    const userEvent = this.props.runEvent;
+    this.props.setEvent(userEvent)
+  
   }
 
   render() {
+
     return (
       <div
         key={this.props.key}
@@ -40,7 +44,7 @@ class EventDetail extends Component {
               <span> {this.props.runEvent.title}</span>
           </a>
         </p>
-        <button onClick={this.updateEventState}>Set your event</button>
+        <button onClick={this.setUserEvent}>Set your event</button>
       </div>
 
     )
@@ -58,4 +62,4 @@ EventDetail.propTypes = {
   event: PropTypes.object.isRequired
 }
 
-export default connect(mapStateToProps, {...actions})(EventDetail);
+export default EventDetail = withRouter(connect(mapStateToProps, {...actions})(EventDetail));
