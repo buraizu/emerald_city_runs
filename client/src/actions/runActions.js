@@ -13,7 +13,7 @@ export const postRun = (run) => {
   let data = {
     method: 'POST',
     headers: {
-      "Authorization": `Bearer ${localStorage.token}`,
+
       'Accept': 'application/json',
       'Content-Type': 'application/json',
     },
