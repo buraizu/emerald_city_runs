@@ -1,5 +1,23 @@
 import * as types from './actionTypes';
 
+export const fetchUserEvents = () => {
+  let data = {
+    method: 'GET',
+    headers: {
+      "Authorization": `Bearer ${localStorage.token}`,
+    },
+  }
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_USER_EVENTS'});
+    return fetch('/api/user_events', data)
+      .then(response => response.json())
+      .then(responseJson => {
+        dispatch({ type: 'FETCH_USER_EVENTS', payload: responseJson })
+      })
+  }
+}
+
+
 export const setEvent = (event) => {
   let data = {
     method: 'POST',
@@ -12,7 +30,7 @@ export const setEvent = (event) => {
   }
   return function(dispatch) {
     return fetch(`/api/user_events`, data)
-      .then(response => console.log(response))
+      .then(response => response.json())
       .then(responseJson => {
         dispatch({type: 'ADD_USER_EVENT', userEvent: responseJson})
       })
