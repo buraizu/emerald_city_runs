@@ -1,7 +1,13 @@
 export const fetchRuns = () => {
+  let data = {
+    method: 'GET',
+    headers: {
+      "Authorization": `Bearer ${localStorage.token}`,
+    },
+  }
   return (dispatch) => {
     dispatch({ type: 'LOADING_RUNS'});
-    return fetch('/api/runs')
+    return fetch('/api/runs', data)
       .then(response => response.json())
       .then(responseJson => {
         dispatch({ type: 'FETCH_RUNS', payload: responseJson })

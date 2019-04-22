@@ -34,7 +34,10 @@ export const signup = (user) => {
       },
       body: JSON.stringify({user: user})
     })
-      .then(response => response.json())
+      .then(response => {
+        if(!response.ok) { throw response }
+        return response.json()
+      })
       .then(jresp => {
         dispatch(authenticate({
           email: newUser.email,
@@ -47,23 +50,7 @@ export const signup = (user) => {
   };
 }
 
-export const logInUser = (user) => {
-  let data = {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({user: user})
-    }
-  return function(dispatch) {
-      return fetch(`/api/users`, data)
-        .then(response => console.log(response))
-      }
-}
-
 export const authenticate = (credentials) => {
-
   return dispatch => {
     dispatch(authRequest())
     return fetch(`api/user_token`, {
@@ -76,7 +63,6 @@ export const authenticate = (credentials) => {
       .then(res => res.json())
       .then((response) => {
           const token = response.jwt;
-          console.log(token + " cowabunga")
           localStorage.setItem('token', token);
           return getUser(credentials)
       })
