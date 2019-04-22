@@ -13,6 +13,7 @@ import RunDetail from './runs/RunDetail';
 import LogIn from './users/LogIn';
 import SignUp from './users/SignUp';
 import UserProfile from './users/UserProfile';
+import UserEventsContainer from './user_events/UserEventsContainer';
 
 class App extends Component {
 
@@ -38,6 +39,7 @@ class App extends Component {
           <Route path='/events' component={EventsContainer} />
           <Route exact path='/runs' component={RunsContainer} />
           <Route exact path='/runs/:id' component={RunDetail} />
+          <Route exact path='/user_events' component={UserEventsContainer} />
         </div>
       </Router>
     );
