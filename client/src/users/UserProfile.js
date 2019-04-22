@@ -36,7 +36,9 @@ class UserProfile extends Component {
         <Col md={4}>
           <LatestRun runs={runs} />
         </Col>
-        <Link to={'/runs'}>Runs</Link>
+        <Link to={'/runs'}>My Runs</Link>
+        <br />
+        <Link to={'/user_events'}>My Events</Link>
       </div>
     );
   }
