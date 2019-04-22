@@ -1,4 +1,10 @@
 class UserEventsController < ApplicationController
+  before_action :authenticate_user, only: [:create, :index]
+
+  def index
+    @user_events = current_user.user_events
+    render json: @user_events, status: 200
+  end
 
   def create
     @user_event = UserEvent.new(user_event_params)
