@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import { withRouter } from 'react-router-dom';
 
-class LogInPage extends Component {
+class LogIn extends Component {
   constructor(props) {
     super(props);
     this.state = { email: '', password: '' }
@@ -57,4 +57,4 @@ class LogInPage extends Component {
 
 }
 
-export default LogInPage = withRouter(connect(null, {...actions})(LogInPage));
+export default LogIn = withRouter(connect(null, {...actions})(LogIn));
