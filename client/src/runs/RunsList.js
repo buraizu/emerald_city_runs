@@ -5,7 +5,7 @@ import Run from './Run';
 const RunsList = (props) => {
   let displayRuns = <div>Nothing to display at the moment. Try refreshing.</div>
 
-  if(props.runs.runs !== undefined) {
+  if(props.runs.runs !== undefined && props.runs.runs.length > 0) {
     displayRuns = props.runs.runs.map((run, index) =>
         <Run key={run.id} run={run} />
       )

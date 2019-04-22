@@ -11,6 +11,8 @@ class RunsController < ApplicationController
     @run.user_id = 1
     if @run.save
       render json: @run
+    else
+      render json: { message: @run.errors }, status: 400
     end
   end
 
@@ -29,7 +31,7 @@ class RunsController < ApplicationController
   private
 
   def run_params
-    params.require(:run).permit(:course, :distance, :time, :review, :rating, :user_id)
+    params.require(:run).permit(:course, :distance, :time, :review, :rating)
   end
 
 end
