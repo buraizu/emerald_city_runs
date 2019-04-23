@@ -18,6 +18,13 @@ class UserEventsController < ApplicationController
     end
   end
 
+  def update
+    @user_event = UserEvent.find_by(id: params[:id])
+    @user_event.update(user_event_params)
+    render json: @user_event
+  end
+
+
   private
 
     def user_event_params
