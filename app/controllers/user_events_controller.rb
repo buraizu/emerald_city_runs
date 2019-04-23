@@ -1,5 +1,5 @@
 class UserEventsController < ApplicationController
-  before_action :authenticate_user, only: [:create, :index]
+  before_action :authenticate_user, only: [:create, :index, :update, :destroy]
 
   def index
     @user_events = current_user.user_events
@@ -24,6 +24,10 @@ class UserEventsController < ApplicationController
     render json: @user_event
   end
 
+  def destroy
+    @user_event = UserEvent.find_by(id: params[:id])
+    @user_event.delete
+  end
 
   private
 
