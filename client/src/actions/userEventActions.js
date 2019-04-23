@@ -58,6 +58,18 @@ export const setGoal = (userEvent) => {
   }
 }
 
+export const deleteUserEvent = (userEvent) => {
+  let data = {
+    method: 'DELETE',
+    headers: {"Authorization": `Bearer ${localStorage.token}`}
+  }
+
+  return function(dispatch) {
+    return fetch(`/api/user_events/${userEvent.id}`, data)
+      .then(dispatch({type: 'DELETE_USER_EVENT', userEvent: userEvent}))
+    }
+}
+
 // export const setEvent = (feature) => {
 //   feature.updated_at = new Date();
 //   let featureId = feature.id;
