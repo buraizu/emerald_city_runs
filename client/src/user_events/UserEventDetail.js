@@ -6,6 +6,7 @@ import * as actions from '../actions/index';
 import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import EditUserEventForm from './EditUserEventForm';
+import { withRouter } from 'react-router-dom';
 
 class UserEventDetail extends Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class UserEventDetail extends Component {
     this.updateUserEventState = this.updateUserEventState.bind(this);
     this.saveUserEvent = this.saveUserEvent.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
-
+    this.deleteUserEvent = this.deleteUserEvent.bind(this);
   }
 
   saveUserEvent(event) {
@@ -50,6 +51,11 @@ class UserEventDetail extends Component {
     //   review: '',
     //   rating: ''
     // })
+  }
+
+  deleteUserEvent(event) {
+    this.props.actions.deleteUserEvent(this.state.userEvent)
+    this.props.history.push("/user_profile")
   }
 
   // deleteRun(event) {
@@ -94,6 +100,7 @@ class UserEventDetail extends Component {
             </p>
             <p>Goal: {this.props.userEvent.goal}</p>
             <button onClick={this.toggleEdit}>edit</button>
+            <button onClick={this.deleteUserEvent}>delete</button>
             <p><Link to={'/'}>Home</Link></p>
           </div>
         </Col>
@@ -118,5 +125,6 @@ UserEventDetail.propTypes = {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserEventDetail);
+
 // value={this.props.saving ? 'Saving...' : 'Save'}
+export default UserEventDetail = withRouter(connect(mapStateToProps, mapDispatchToProps)(UserEventDetail));
