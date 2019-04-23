@@ -53,7 +53,7 @@ class RunDetail extends Component {
 
   render() {
 
-    if (this.state.isEditing) {
+    if (this.state.isEditing) { // this.state.hasGoal?
       return (
         <Col md={{ span: 4, offset: 5 }}>
           <div>
