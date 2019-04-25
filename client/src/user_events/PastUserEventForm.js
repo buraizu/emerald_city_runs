@@ -1,9 +1,20 @@
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import * as actions from '../actions/index';
+// import { bindActionCreators } from 'redux';
+import { withRouter } from 'react-router-dom';
 
 class PastUserEventForm extends Component {
 
+  completeUserEvent() {
+    debugger;
+    this.props.setGoal(this.props.userEvent)
+
+  }
+
   render() {
+
     return (
       <div className="feature">
         <h3>Event Details</h3>
@@ -21,7 +32,7 @@ class PastUserEventForm extends Component {
             type="text"
             onChange={this.props.onChange}
             name="result"
-            value={this.props.userEvent.result}
+            value={this.props.userEvent.result || ''}
           />
           <br />
           <input
@@ -35,8 +46,18 @@ class PastUserEventForm extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    userEvents: state.userEvents
+  }
+}
+
+// const mapDispatchToProps = (dispatch) => {
+//   return { actions: bindActionCreators(actions, dispatch) }
+// }
+
 PastUserEventForm.propTypes = {
 
 }
 
-export default PastUserEventForm;
+export default PastUserEventForm = withRouter((PastUserEventForm));

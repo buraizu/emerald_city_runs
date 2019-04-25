@@ -21,7 +21,7 @@ class EditUserEventForm extends Component {
             type="text"
             onChange={this.props.onChange}
             name="goal"
-            value={this.props.userEvent.goal}
+            value={this.props.userEvent.goal || ''}
           />
           <br />
           <input
