@@ -38,6 +38,7 @@ export const setEvent = (event) => {
 }
 
 export const setGoal = (userEvent) => {
+
   let userEventId = userEvent.id;
   let data = {
     method: 'PUT',
