@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import UserEventDetail from './UserEventDetail';
 import PastUserEventForm from './PastUserEventForm';
 import UserEvent from './UserEvent';
+import { Link } from 'react-router-dom';
 
 const UserEventsList = (props) => {
   let currentDate = new Date();
@@ -11,7 +12,7 @@ const UserEventsList = (props) => {
   let displayPastUserEvents = <div>Check back here after your event to record your result!</div>
 
   if(props.userEvents.userEvents !== undefined) {
-    let pastUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) < currentDate)
+    let pastUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) < currentDate && userEvent.goal === null)
     let upcomingUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) > currentDate)
 
     displayUpcomingUserEvents = upcomingUserEvents.map((userEvent) =>
@@ -36,6 +37,7 @@ const UserEventsList = (props) => {
       <div className="feature">
         <h3>Your past events</h3>
         {displayPastUserEvents}
+        <h4>If you've already entered your result, check out your event in <Link to="/trophies">Trophies</Link></h4>
       </div>
     </div>
   )

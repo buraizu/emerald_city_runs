@@ -8,11 +8,10 @@ const UserEvent = ({userEvent}) => {
   let buttonText = (currentDate < eventDate ? "Set your goal" : "Record your result")
   return (
     <div className="feature">
-      <h3>Your Event: {userEvent.title}</h3>
+      <h3>{userEvent.title}</h3>
       <p>Date: {userEvent.date}</p>
       <p><a href={userEvent.url} target="_blank" rel="noopener noreferrer">Event Home Page</a></p>
       <Link to={'/user_events/' + userEvent.id}>{buttonText}</Link>
-      <p>------------</p>
     </div>
   )
 
