@@ -14,8 +14,8 @@ import LogIn from './users/LogIn';
 import SignUp from './users/SignUp';
 import UserProfile from './users/UserProfile';
 import UserEventsContainer from './user_events/UserEventsContainer';
-import TrophyCase from './user_events/TrophyCase';
 import UserEventDetail from './user_events/UserEventDetail';
+import TrophyCase from './user_events/TrophyCase';
 
 class App extends Component {
 
@@ -43,6 +43,7 @@ class App extends Component {
           <Route exact path='/runs/:id' component={RunDetail} />
           <Route exact path='/user_events' component={UserEventsContainer} />
           <Route exact path='/user_events/:id' component={UserEventDetail} />
+          <Route exact path='/trophies' component={TrophyCase} />
         </div>
       </Router>
     );
