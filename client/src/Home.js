@@ -31,10 +31,10 @@ class Home extends Component {
           <Row>
             <Col md={4}>
               <div className="feature">
-                <LogIn />
+                <Link to="/signup">Sign Up</Link>
               </div>
               <div className="feature">
-                <SignUp />
+                <Link to="/login">Log In</Link>
               </div>
             </Col>
             <Col md={{ span: 4, offset: 4 }}>
