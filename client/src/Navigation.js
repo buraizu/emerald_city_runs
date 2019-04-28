@@ -14,7 +14,6 @@ class Navigation extends Component {
 
     const mainNav = (
       <ul>
-
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/events">Events</Link></li>
         <li><Link to="/login">Log In</Link></li>
@@ -24,7 +23,6 @@ class Navigation extends Component {
 
     const userNav = (
       <ul>
-
         <li><Link to="/home">Home</Link></li>
         <li><Link to="/events">Events</Link></li>
         <li><Link to="/runs">Runs</Link></li>
