@@ -29,12 +29,12 @@ class Home extends Component {
             </div>
           </Row>
           <Row>
-            <Col md={4}>
-              <div className="feature">
-                <Link to="/signup">Sign Up</Link>
+            <Col md={{ span: 4, offset: 4 }}>
+              <div className="feature App largeText">
+                <Link to="/signup">SIGN UP</Link>
               </div>
-              <div className="feature">
-                <Link to="/login">Log In</Link>
+              <div className="feature App largeText">
+                <Link to="/login">LOG IN</Link>
               </div>
             </Col>
             <Col md={{ span: 4, offset: 4 }}>

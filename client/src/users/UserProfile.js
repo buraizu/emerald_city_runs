@@ -31,7 +31,6 @@ class UserProfile extends Component {
     const runs = this.props.runs;
     return(
       <div>
-        <button onClick={(e) => this.handleLogout(e)}>Log Out</button>
         <h3>{this.props.user.email}</h3>
         <Col md={4}>
           <LatestRun runs={runs} />

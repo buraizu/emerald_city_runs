@@ -1,3 +1,11 @@
+/* html {
+  background: url('/milkovi.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
 .App {
   text-align: center;
 }
@@ -52,5 +60,17 @@
 }
 
 .displayEvents {
+  display: inline;
+}
+
+.largeText {
+  font-size: 2rem;
+}
+
+.nav {
+  display: inline;
+}
+
+.navLink {
   display: inline;
 }
