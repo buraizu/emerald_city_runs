@@ -47,23 +47,6 @@ export const signup = (user) => {
   };
 }
 
-export const logInUser = (user) => {
-  let data = {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({user: user})
-    }
-  return function(dispatch) {
-      return fetch(`/api/users`, data)
-        .then(response => console.log(response))
-      }
-}
-
-
-
 export const authenticate = (credentials) => {
   return dispatch => {
     dispatch(authRequest())
