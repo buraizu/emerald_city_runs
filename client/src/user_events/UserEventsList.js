@@ -12,7 +12,7 @@ const UserEventsList = (props) => {
   let displayPastUserEvents = <div>Check back here after your event to record your result!</div>
 
   if(props.userEvents.userEvents !== undefined) {
-    let pastUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) < currentDate && userEvent.goal === null)
+    let pastUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) < currentDate && userEvent.result === null)
     let upcomingUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) > currentDate)
 
     displayUpcomingUserEvents = upcomingUserEvents.map((userEvent) =>

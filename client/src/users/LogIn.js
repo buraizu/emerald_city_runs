@@ -15,11 +15,19 @@ class LogIn extends Component {
     });
   }
 
+  handleAuthenticate = (creds) => {
+
+    if (this.props.authenticate(creds)) {
+
+    } else {
+      console.log('whoa')
+    }
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
     if(this.props.authenticate(this.state)) {
         this.props.history.push('/user_profile')
-        window.alert("You're logged in!")
       } else {
         window.alert("Unable to Log In with provided credentials")
       }

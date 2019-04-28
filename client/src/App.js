@@ -16,14 +16,17 @@ import UserProfile from './users/UserProfile';
 import UserEventsContainer from './user_events/UserEventsContainer';
 import UserEventDetail from './user_events/UserEventDetail';
 import TrophyCase from './user_events/TrophyCase';
+import Navigation from './Navigation';
 
 class App extends Component {
 
   render() {
+
     const {isAuthenticated, user} = this.props
 
     const guestViews = (
       <div>
+        <Navigation isAuthenticated={isAuthenticated} />
         <Route path="/login" component={LogIn} />
         <Route path="/signup" component={SignUp} />
         <Route exact path="/" component={Home} />
@@ -31,12 +34,9 @@ class App extends Component {
     );
 
     const userViews = (
-      <Router>
-        <Header />
         <div>
-          <Route path="/user_profile" render={() => <UserProfile user={user}/>} />
-          <Route path="/login" component={LogIn} />
-          <Route path="/signup" component={SignUp} />
+          <Navigation isAuthenticated={isAuthenticated} />
+          <Route exact path="/user_profile" render={() => <UserProfile user={user}/>} />
           <Route exact path="/" component={Home} />
           <Route path='/events' component={EventsContainer} />
           <Route exact path='/runs' component={RunsContainer} />
@@ -45,8 +45,7 @@ class App extends Component {
           <Route exact path='/user_events/:id' component={UserEventDetail} />
           <Route exact path='/trophies' component={TrophyCase} />
         </div>
-      </Router>
-    );
+      );
 
     return (
      <Router>
