@@ -18,14 +18,7 @@ class UserEventsContainer extends Component {
 
       return (
         <div className="background">
-          <Row>
-            <Col md={4}>
-              <UserEventsList userEvents={userEvents}/>
-            </Col>
-            <Col md={{ span: 4, offset: 4 }}>
-
-            </Col>
-          </Row>
+          <UserEventsList userEvents={userEvents}/>
           <div className="feature">
             <Link to={'/user_profile'}>Back to User Profile</Link>
           </div>

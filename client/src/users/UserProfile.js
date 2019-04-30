@@ -31,40 +31,31 @@ class UserProfile extends Component {
   }
 
   render() {
-    let currentDate = new Date();
-    let upcomingUserEvents;
-    let sortedUserEvents;
-    let nextUserEvent = null;
     const userEvents = this.props.userEvents;
     const runs = this.props.runs;
 
-    if(userEvents) {
-      // upcomingUserEvents = userEvents.filter((userEvent) => new Date(userEvent.date) > currentDate)
-      // sortedUserEvents = upcomingUserEvents.sort((event1, event2) => new Date(event1.date) - new Date(event2.date))
-      // nextUserEvent = sortedUserEvents[0]
-    }
-
-
     return(
       <div>
+        <Row className="justify-content-center">
+          <Col md={4}>
+            <h2>Your User Profile</h2>
+          </Col>
+        </Row>
         <Row>
-        <Col md={4}>
-          <LatestRun runs={runs} />
-          <div className="feature largeText">
-            <Link to={'/runs'}>My Runs</Link>
-          </div>
-        </Col>
-        <Col md={{ span: 4, offset: 4 }}>
-          <NextUserEvent userEvents={userEvents} />
-          <div className="feature largeText">
-            <Link to={'/user_events'}>My Events</Link>
-          </div>
-        </Col>
+          <Col md={4}>
+            <LatestRun runs={runs} />
+            <div className="feature largeText">
+              <Link to={'/runs'}>My Runs</Link>
+            </div>
+          </Col>
+          <Col md={{ span: 4, offset: 4 }}>
+            <NextUserEvent userEvents={userEvents} />
+            <div className="feature largeText">
+              <Link to={'/user_events'}>My Events</Link>
+            </div>
+          </Col>
         </Row>
       </div>
-
-
-
     );
   }
 }

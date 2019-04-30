@@ -7,7 +7,6 @@ const UserEvent = ({userEvent}) => {
   let currentDate = new Date();
   let buttonText = (currentDate < eventDate ? "Update your goal" : "Record your result")
 
-
   let pastEventText = (userEvent) => {
     return userEvent.result ? `Your result: ${userEvent.result}` : `-- No result entered --`
   }
