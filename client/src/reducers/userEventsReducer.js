@@ -11,8 +11,9 @@ export default (state = { loading: false, userEvents: [] }, action) => {
       return Object.assign({}, state, {loading: true});
 
     case 'FETCH_USER_EVENTS':
-      let orderedUserEvents = action.payload.reverse()
-      return {loading: false, userEvents: orderedUserEvents};
+      const sortedUserEvents = action.payload.sort((event1, event2) => new Date(event1.date) - new Date(event2.date))
+
+      return {loading: false, userEvents: sortedUserEvents};
 
     case 'UPDATE_USER_EVENT':
 

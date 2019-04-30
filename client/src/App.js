@@ -37,7 +37,6 @@ class App extends Component {
         <div>
           <Navigation isAuthenticated={isAuthenticated} />
           <Route exact path="/user_profile" render={() => <UserProfile user={user}/>} />
-          <Route exact path="/" component={Home} />
           <Route path='/events' component={EventsContainer} />
           <Route exact path='/runs' component={RunsContainer} />
           <Route exact path='/runs/:id' component={RunDetail} />

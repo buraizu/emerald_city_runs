@@ -9,7 +9,6 @@ const EventList = (props) => {
   const displayEvents = props.runEvents.events.map((event, index) => {
     return (
       <EventDetail key={index} runEvent={event} className="displayEvents"/>
-
     )
   })
 

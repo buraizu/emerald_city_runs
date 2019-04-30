@@ -14,19 +14,19 @@ class Navigation extends Component {
 
     const mainNav = (
       <ul className="nav">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/login">Log In</Link></li>
-        <li><Link to="/signup">Sign Up</Link></li>
+        <li className="navLink"><Link to="/">Home</Link></li>
+        <li className="navLink"><Link to="/login">Log In</Link></li>
+        <li className="navLink"><Link to="/signup">Sign Up</Link></li>
       </ul>
     )
 
     const userNav = (
       <ul className="nav">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/events">Events</Link></li>
-        <li><Link to="/runs">Runs</Link></li>
-        <li><Link to="/user_profile">Profile</Link></li>
-        <li onClick={(e) => this.handleLogout(e)}>Log Out</li>
+        <li className="navLink"><Link to="/events">Events</Link></li>
+        <li className="navLink"><Link to="/runs">Runs</Link></li>
+        <li className="navLink"><Link to="/user_profile">Profile</Link></li>
+        <li className="navLink"><Link to="/trophies">Trophies</Link></li>
+        <li className="navLink" onClick={(e) => this.handleLogout(e)}>Log Out</li>
       </ul>
     );
 

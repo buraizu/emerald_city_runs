@@ -67,10 +67,8 @@
   font-size: 2rem;
 }
 
-.nav {
-  display: inline;
-}
-
 .navLink {
-  display: inline;
+  float: left;
+  margin-right: 10px;
+  display: inline-block;
 }
