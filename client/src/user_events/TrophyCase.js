@@ -23,23 +23,19 @@ class TrophyCase extends Component {
       return <Trophy key={userEvent.id} userEvent={userEvent} />
     })
 
-
-
-
-      return (
-        <div className="background">
-          <Row>
-            <Col md={4}>
-              <div className="feature">{displayTrophies}</div>
-            </Col>
-            <Col md={{ span: 4, offset: 4 }}>
-              <h1 className="feature">Trophy Case</h1>
-            </Col>
-          </Row>
-          <div className="feature">
-            <Link to={'/user_profile'}>Back to User Profile</Link>
-          </div>
-        </div>
+    return (
+      <div className="background">
+        <Row>
+          <Col md={{ span: 4, offset: 4 }}>
+            <h1 className="feature text-center">Trophy Case</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={{ span: 4, offset: 4 }}>
+            <div className="feature">{displayTrophies}</div>
+          </Col>
+        </Row>
+      </div>
       )
     }
 

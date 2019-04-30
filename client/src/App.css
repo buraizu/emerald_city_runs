@@ -67,8 +67,16 @@
   font-size: 2rem;
 }
 
+.nav {
+  font-size: 2rem;
+}
+
 .navLink {
-  float: left;
-  margin-right: 10px;
-  display: inline-block;
+  display: inline;
+  margin: 25px;
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
