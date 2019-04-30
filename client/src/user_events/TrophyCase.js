@@ -18,9 +18,13 @@ class TrophyCase extends Component {
     let currentDate = new Date();
 
     const trophyEvents = this.props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) < currentDate && userEvent.result !== null);
-    const displayTrophies = trophyEvents.map((userEvent) =>
-        <Trophy key={userEvent.id} userEvent={userEvent} />
-      )
+
+    const displayTrophies = trophyEvents.map((userEvent) => {
+      return <Trophy key={userEvent.id} userEvent={userEvent} />
+    })
+
+
+
 
       return (
         <div className="background">

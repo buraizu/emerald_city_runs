@@ -4,16 +4,19 @@ import UserEventDetail from './UserEventDetail';
 import PastUserEventForm from './PastUserEventForm';
 import UserEvent from './UserEvent';
 import { Link } from 'react-router-dom';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const UserEventsList = (props) => {
   let currentDate = new Date();
-
+  let userEvents = props.userEvents.userEvents;
   let displayUpcomingUserEvents = <div>Nothing to display at the moment. Try refreshing.</div>
   let displayPastUserEvents = <div>Check back here after your event to record your result!</div>
 
   if(props.userEvents.userEvents !== undefined) {
-    let pastUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) < currentDate && userEvent.result === null)
-    let upcomingUserEvents = props.userEvents.userEvents.filter((userEvent) => new Date(userEvent.date) > currentDate)
+
+    let pastUserEvents = userEvents.filter((userEvent) => new Date(userEvent.date) < currentDate && userEvent.result === null)
+    let upcomingUserEvents = userEvents.filter((userEvent) => new Date(userEvent.date) > currentDate)
 
     displayUpcomingUserEvents = upcomingUserEvents.map((userEvent) =>
         <UserEvent key={userEvent.id} userEvent={userEvent} />
@@ -22,7 +25,6 @@ const UserEventsList = (props) => {
         <UserEvent key={userEvent.id} userEvent={userEvent} />
       )
 
-    // let sortedEvents = action.payload.sort((event1, event2) => new Date(event1.date) - new Date(event2.date))
   }
 
   return (
@@ -37,7 +39,7 @@ const UserEventsList = (props) => {
       <div className="feature">
         <h3>Your past events</h3>
         {displayPastUserEvents}
-        <h4>If you've already entered your result, check out your event in <Link to="/trophies">Trophies</Link></h4>
+        <p>If you've already entered your event's result, check it out in <Link to="/trophies">Trophies</Link></p>
       </div>
     </div>
   )
