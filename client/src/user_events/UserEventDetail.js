@@ -53,16 +53,24 @@ class UserEventDetail extends Component {
   }
 
   render() {
+    let userEvent = this.state.userEvent;
     let currentDate = new Date();
     let userEventDate = new Date(this.props.userEvent.date)
     let buttonText = (currentDate < userEventDate ? "set goal" : "result")
+    let pastEventText = (userEvent) => {
+      return userEvent.result ? `Your result: ${userEvent.result}` : `-- No result entered --`
+    }
+    let futureEventText = (userEvent) => {
+      return userEvent.goal ? `Your goal: ${userEvent.goal}` : `-- No goal set --`
+    }
+    let goalOrResultText = (userEventDate < currentDate ? pastEventText(userEvent) : futureEventText(userEvent))
 
-    if (this.state.isEditing && userEventDate > currentDate) {
+    if (userEventDate > currentDate && this.state.isEditing) {
       return (
         <Col md={{ span: 4, offset: 5 }}>
           <div>
             <EditUserEventForm
-              userEvent={this.state.userEvent}
+              userEvent={userEvent}
               onChange={this.updateUserEventState}
               saveUserEvent={this.saveUserEvent}
             />
@@ -70,12 +78,12 @@ class UserEventDetail extends Component {
         </Col>
       )
     }
-    if (this.state.isEditing && userEventDate < currentDate) {
+    if (userEventDate < currentDate && this.state.isEditing) {
       return (
         <Col md={{ span: 4, offset: 5 }}>
           <div>
             <PastUserEventForm
-              userEvent={this.state.userEvent}
+              userEvent={userEvent}
               onChange={this.updateUserEventState}
               saveUserEvent={this.saveUserEvent}
             />
@@ -85,13 +93,14 @@ class UserEventDetail extends Component {
     }
     return (
       <Col md={{ span: 4, offset: 5 }}>
-        <div>
+        <div className="feature">
           <h3>Your Event Details</h3>
           <h4>{this.props.userEvent.title}</h4>
           <p>Date: {this.props.userEvent.date}</p>
           <p><a href={this.props.userEvent.url} target="_blank" rel="noopener noreferrer">Event Home Page</a></p>
+          <p>{goalOrResultText}</p>
           <button onClick={this.toggleEdit}>{buttonText}</button>
-          <button onClick={this.deleteUserEvent}>delete</button>
+          <button onClick={this.deleteUserEvent}>delete this event</button>
           <p><Link to={'/user_events'}>Back to My Events</Link></p>
           <p><Link to={'/'}>Home</Link></p>
         </div>
