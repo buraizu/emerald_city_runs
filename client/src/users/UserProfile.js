@@ -36,23 +36,23 @@ class UserProfile extends Component {
 
     return(
       <div>
-        <Row className="justify-content-center">
-          <Col md={4}>
-            <h2>Your User Profile</h2>
+        <Row>
+          <Col md={{ span: 2, offset: 5 }}>
+            <h2 className="displayText text-center">Your Profile</h2>
           </Col>
         </Row>
         <Row>
-          <Col md={4}>
-            <LatestRun runs={runs} />
-            <div className="feature largeText">
+          <Col md={{ span: 4, offset: 1 }}>
+            <div className="feature largeText text-center">
               <Link to={'/runs'}>My Runs</Link>
             </div>
+            <LatestRun runs={runs} />
           </Col>
-          <Col md={{ span: 4, offset: 4 }}>
-            <NextUserEvent userEvents={userEvents} />
-            <div className="feature largeText">
+          <Col md={{ span: 4, offset: 2 }}>
+            <div className="feature largeText text-center">
               <Link to={'/user_events'}>My Events</Link>
             </div>
+            <NextUserEvent userEvents={userEvents} />
           </Col>
         </Row>
       </div>

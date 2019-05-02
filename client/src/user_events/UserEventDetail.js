@@ -67,7 +67,7 @@ class UserEventDetail extends Component {
 
     if (userEventDate > currentDate && this.state.isEditing) {
       return (
-        <Col md={{ span: 4, offset: 5 }}>
+        <Col md={{ span: 4, offset: 4 }}>
           <div>
             <EditUserEventForm
               userEvent={userEvent}
@@ -80,7 +80,7 @@ class UserEventDetail extends Component {
     }
     if (userEventDate < currentDate && this.state.isEditing) {
       return (
-        <Col md={{ span: 4, offset: 5 }}>
+        <Col md={{ span: 4, offset: 4 }}>
           <div>
             <PastUserEventForm
               userEvent={userEvent}
@@ -92,7 +92,7 @@ class UserEventDetail extends Component {
       )
     }
     return (
-      <Col md={{ span: 4, offset: 5 }}>
+      <Col md={{ span: 4, offset: 4 }}>
         <div className="feature">
           <h3>Your Event Details</h3>
           <h4>{this.props.userEvent.title}</h4>
@@ -101,8 +101,7 @@ class UserEventDetail extends Component {
           <p>{goalOrResultText}</p>
           <button onClick={this.toggleEdit}>{buttonText}</button>
           <button onClick={this.deleteUserEvent}>delete this event</button>
-          <p><Link to={'/user_events'}>Back to My Events</Link></p>
-          <p><Link to={'/'}>Home</Link></p>
+          <p><Link to={'/user_events'}>Back to My Events</Link><span> --- <Link to={'/user_profile'}>My Profile</Link></span></p>
         </div>
       </Col>
     )

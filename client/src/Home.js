@@ -12,36 +12,23 @@ import EventList from './events/EventList';
 class Home extends Component {
 
   componentDidMount() {
-    this.props.fetchEvents();
-    // this.props.fetchRuns();
+    this.props.fetchEvents(); // necessary ?
   }
 
   render() {
-
     return (
-      <div className="background">
-        <Container>
-          <Row className="justify-content-md-center text-center">
-            <div className="feature">
-              <h1>Welcome to Emerald City Runs</h1>
-              <h3>Your source for upcoming Seattle running events</h3>
-              <p>Get inspired to train for something, or simply keep track of your runs!</p>
-            </div>
-          </Row>
-          <Row>
-            <Col md={{ span: 4, offset: 4 }}>
-              <div className="feature App largeText">
-                <Link to="/signup">SIGN UP</Link>
-              </div>
-              <div className="feature App largeText">
-                <Link to="/login">LOG IN</Link>
-              </div>
-            </Col>
-            <Col md={{ span: 4, offset: 4 }}>
-
-            </Col>
-          </Row>
-        </Container>
+      <div>
+        <div className="feature text-center">
+          <h1>Welcome to Emerald City Runs</h1>
+          <h3>Your source for upcoming Seattle running events</h3>
+          <p>Get inspired to train for something, or simply keep track of your runs!</p>
+        </div>
+        <div className="feature App largeText">
+          <Link to="/signup">SIGN UP</Link>
+        </div>
+        <div className="feature App largeText">
+          <Link to="/login">LOG IN</Link>
+        </div>
       </div>
     )
   }
@@ -55,5 +42,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {...actions})(Home);
-
-// <EventList runEvents={this.props.events} setEvent={this.props.setEvent} />

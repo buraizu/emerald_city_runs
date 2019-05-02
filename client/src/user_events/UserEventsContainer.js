@@ -17,11 +17,8 @@ class UserEventsContainer extends Component {
     const userEvents = this.props.userEvents;
 
       return (
-        <div className="background">
+        <div>
           <UserEventsList userEvents={userEvents}/>
-          <div className="feature">
-            <Link to={'/user_profile'}>Back to User Profile</Link>
-          </div>
         </div>
       )
     }

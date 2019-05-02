@@ -26,8 +26,8 @@ class TrophyCase extends Component {
     return (
       <div className="background">
         <Row>
-          <Col md={{ span: 4, offset: 4 }}>
-            <h1 className="feature text-center">Trophy Case</h1>
+          <Col md={{ span: 2, offset: 5 }}>
+            <h2 className="displayText">Your Trophies</h2>
           </Col>
         </Row>
         <Row>

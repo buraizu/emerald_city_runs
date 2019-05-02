@@ -28,33 +28,31 @@ class SignUp extends Component {
 
   render() {
     return (
-      <Col md={{ span: 4, offset: 4 }}>
-        <div className="feature">
-          <h3>Sign Up</h3>
-          <form>
-            <span>Email: </span>
-            <input
-              type="text"
-              onChange={this.handleOnChange}
-              name="email"
-              value={this.state.email}
-            />
-            <br />
-            <span>Password: </span>
-            <input
-              type="text"
-              onChange={this.handleOnChange}
-              name="password"
-              value={this.state.password}
-            />
-            <br />
-            <input
-              type="submit"
-              onClick={this.handleSubmit}
-            />
-          </form>
-        </div>
-      </Col>
+      <div className="feature">
+        <h3>Sign Up</h3>
+        <form>
+          <span>Email: </span>
+          <input
+            type="text"
+            onChange={this.handleOnChange}
+            name="email"
+            value={this.state.email}
+          />
+          <br />
+          <span>Password: </span>
+          <input
+            type="text"
+            onChange={this.handleOnChange}
+            name="password"
+            value={this.state.password}
+          />
+          <br />
+          <input
+            type="submit"
+            onClick={this.handleSubmit}
+          />
+        </form>
+      </div>
     )
   }
 

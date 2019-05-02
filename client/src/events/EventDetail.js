@@ -11,7 +11,6 @@ class EventDetail extends Component {
     this.state = {
       runEvent: this.props.event
     }
-    // this.updateEventState = this.updateEventState.bind(this);
     this.setUserEvent = this.setUserEvent.bind(this);
     this.toggleFeatured = this.toggleFeatured.bind(this);
   }
@@ -41,12 +40,11 @@ class EventDetail extends Component {
         <p>
           Event Home Page:
           <a href={this.props.runEvent.url} target="_blank" rel="noopener noreferrer">
-              <span> {this.props.runEvent.title}</span>
+            <span> {this.props.runEvent.title}</span>
           </a>
         </p>
         <button onClick={this.setUserEvent}>Set your event</button>
       </div>
-
     )
   }
 }

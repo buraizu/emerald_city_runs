@@ -13,12 +13,7 @@ const RunsList = (props) => {
 
   return (
     <div>
-      <br />
-      <h3 className="displayText">Your runs</h3>
-      <br />
-      <div>
-        {displayRuns}
-      </div>
+      {displayRuns}
     </div>
   )
 }
