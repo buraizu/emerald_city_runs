@@ -17,25 +17,32 @@ import UserEventsContainer from './user_events/UserEventsContainer';
 import UserEventDetail from './user_events/UserEventDetail';
 import TrophyCase from './user_events/TrophyCase';
 import Navigation from './Navigation';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 class App extends Component {
 
   render() {
-
     const {isAuthenticated, user} = this.props
 
     const guestViews = (
-      <div>
-        <Navigation isAuthenticated={isAuthenticated} />
-        <Route path="/login" component={LogIn} />
-        <Route path="/signup" component={SignUp} />
-        <Route exact path="/" component={Home} />
+      <div className="wrapper">
+        <Row className="justify-content-center">
+          <Navigation isAuthenticated={isAuthenticated} />
+        </Row>
+        <Row className="justify-content-center">
+          <Route path="/login" component={LogIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route exact path="/" component={Home} />
+        </Row>
       </div>
     );
 
     const userViews = (
-        <div>
-          <Navigation isAuthenticated={isAuthenticated} />
+        <div className="wrapper">
+          <Row className="justify-content-center">
+            <Navigation isAuthenticated={isAuthenticated} />
+          </Row>
           <Route exact path="/user_profile" render={() => <UserProfile user={user}/>} />
           <Route path='/events' component={EventsContainer} />
           <Route exact path='/runs' component={RunsContainer} />

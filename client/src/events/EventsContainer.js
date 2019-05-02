@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import EventList from './EventList';
-import FeaturedEvent from './FeaturedEvent';
+
 import { Link } from 'react-router-dom';
 
 class EventsContainer extends Component {
@@ -14,35 +14,21 @@ class EventsContainer extends Component {
     this.props.fetchEvents();
   }
 
-  hasFeaturedEvent = () => {
-    if(this.props.events.featuredEvent) {
-      return <FeaturedEvent feature={this.props.events.featuredEvent} />
-    } else {
-      return (
-        <h3>Ready to run? Choose an event!</h3>
-      )
-    }
-  }
-
   render() {
     return (
-      <div className="background">
+      <div>
         <Row>
-          <Col md={{ span: 4, offset: 1 }}>
-            <div>
+          <Col md={{ span: 2, offset: 5 }}>
+            <h2 className="displayText text-center">Upcoming Events</h2>
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col md={{ span: 10 }}>
+            <div className="eventsContainer feature">
               <EventList runEvents={this.props.events} setEvent={this.props.setEvent} />
             </div>
           </Col>
-          <Col md={{ span: 4, offset: 3}}>
-            <h3 className="displayText">Featured Event: </h3>
-            <div className="feature">
-              {this.hasFeaturedEvent()}
-            </div>
-          </Col>
         </Row>
-        <div className="feature">
-          <Link to={'/user_profile'}>User Profile</Link>
-        </div>
       </div>
       )
     }

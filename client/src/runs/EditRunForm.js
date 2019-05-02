@@ -5,7 +5,7 @@ class EditRunForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="feature">
         <h3>Edit Run</h3>
         <form onSubmit={this.props.saveRun}>
           <span>Course: </span>

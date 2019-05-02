@@ -27,7 +27,7 @@ class LogIn extends Component {
 
   render() {
     return (
-      <Col md={{ span: 4, offset: 4 }}>
+
         <div className="feature">
           <h3>Log In</h3>
           <form>
@@ -53,7 +53,7 @@ class LogIn extends Component {
             />
           </form>
         </div>
-      </Col>
+  
     )
   }
 

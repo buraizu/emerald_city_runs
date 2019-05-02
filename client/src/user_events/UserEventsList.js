@@ -29,27 +29,25 @@ const UserEventsList = (props) => {
 
   return (
     <div>
-      <br />
       <Row>
         <Col md={{ span: 2, offset: 5 }}>
           <h2 className="displayText">Your Events</h2>
         </Col>
       </Row>
-      <br />
       <Row>
-      <Col md={4}>
-      <div className="feature">
-        <h3>Your upcoming events</h3>
-        {displayUpcomingUserEvents}
-      </div>
-      </Col>
-      <Col md={{ span: 4, offset: 4 }}>
-      <div className="feature">
-        <h3>Your past events</h3>
-        {displayPastUserEvents}
-        <p>If you've already entered your event's result, check it out in <Link to="/trophies">Trophies</Link></p>
-      </div>
-      </Col>
+        <Col md={{ span: 4, offset: 1 }}>
+          <div className="feature">
+            <h3>Your upcoming events</h3>
+            {displayUpcomingUserEvents}
+          </div>
+        </Col>
+        <Col md={{ span: 4, offset: 2 }}>
+          <div className="feature">
+            <h3>Your past events</h3>
+            {displayPastUserEvents}
+            <p>If you've already entered your event's result, check it out in <Link to="/trophies">Trophies</Link></p>
+          </div>
+        </Col>
       </Row>
     </div>
   )

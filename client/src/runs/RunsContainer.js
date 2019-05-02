@@ -18,18 +18,20 @@ class RunsContainer extends Component {
     const runs = this.props.runs;
 
       return (
-        <div className="background">
+        <div>
           <Row>
-            <Col md={4}>
+            <Col md={{ span: 2, offset: 5 }}>
+              <h2 className="displayText text-center">Runs</h2>
+              </Col>
+          </Row>
+          <Row>
+            <Col md={{ span: 4, offset: 1 }}>
               <RunForm postRun={this.props.postRun} />
             </Col>
-            <Col md={{ span: 4, offset: 4 }}>
+            <Col md={{ span: 4, offset: 2 }}>
               <RunsList runs={runs} />
             </Col>
           </Row>
-          <div className="feature">
-            <Link to={'/user_profile'}>Back to User Profile</Link>
-          </div>
         </div>
       )
     }
