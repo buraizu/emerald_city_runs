@@ -22,18 +22,23 @@ const NextUserEvent = ({userEvents}) => {
     goalText = `Your goal: ${nextUserEvent.goal}`
   }
 
+  const daysRemaining = () => {
+    let diff = Math.abs(currentDate - new Date(nextUserEvent.date))
+    let days = diff / (1000 * 60 * 60 * 24);
+    return days.toFixed(0);
+  }
 
   if(nextUserEvent) {
     return (
       <div className="feature">
-        <h3>Your next event</h3>
+        <h2>Your next event</h2>
         <h4>{nextUserEvent.title}</h4>
         <p>{nextUserEvent.date}</p>
+        <p>Only {daysRemaining()} days remaining until your event!</p>
         <p>{goalText}</p>
         <p><a href={nextUserEvent.url} target="_blank" rel="noopener noreferrer">Event Home Page</a></p>
-        <p></p>
+
         <p><Link to={'/user_events/' + nextUserEvent.id}>Details</Link></p>
-        <p>------------</p>
       </div>
     )
   } else {
