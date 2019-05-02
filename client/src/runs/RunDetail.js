@@ -19,6 +19,7 @@ class RunDetail extends Component {
     this.saveRun = this.saveRun.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
     this.deleteRun = this.deleteRun.bind(this);
+    this.getPace = this.getPace.bind(this);
   }
 
   updateRunState(event) {
@@ -44,6 +45,13 @@ class RunDetail extends Component {
     this.props.history.push("/user_profile")
   }
 
+  getPace = () => {
+    let runTime = this.state.run.time;
+    let runDistance = this.state.run.distance;
+    let pace = (runDistance / (runTime  / 60));
+    return pace.toFixed(1);
+  }
+
   componentWillReceiveProps(nextProps) {
     if(this.props.run.id !== nextProps.run.id) {
       this.setState({run: nextProps.run});
@@ -67,17 +75,18 @@ class RunDetail extends Component {
       )
     }
     return (
-      <Col md={{ span: 4, offset: 5 }}>
-        <div>
+      <Col md={{ span: 4, offset: 4 }}>
+        <div className="feature">
           <h3>Run Details</h3>
           <h4>Course: {this.props.run.course}</h4>
           <p>Distance: {this.props.run.distance} miles</p>
           <p>Time: {this.props.run.time} minutes</p>
           <p>Review: {this.props.run.review}</p>
           <p>Rating: {this.props.run.rating}</p>
+          <p>Your average pace: {this.getPace()} miles per hour</p>
           <button onClick={this.toggleEdit}>edit</button>
           <button onClick={this.deleteRun}>delete</button>
-          <p><Link to={'/runs'}>Back to My Runs</Link></p>
+          <p><Link to={'/runs'}>Back to My Runs</Link><span> --- <Link to={'/user_profile'}>My Profile</Link></span></p>
           <p><Link to={'/'}>Home</Link></p>
         </div>
       </Col>
