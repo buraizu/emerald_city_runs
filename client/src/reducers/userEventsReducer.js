@@ -3,9 +3,9 @@ export default (state = { loading: false, userEvents: [] }, action) => {
   switch(action.type) {
 
     case 'ADD_USER_EVENT':
-      return {
-        userEvents: [action.userEvent, ...state.userEvents]
-      };
+     return {
+       userEvents: [action.userEvent, ...state.userEvents]
+     };
 
     case 'LOADING_USER_EVENTS':
       return Object.assign({}, state, {loading: true});
@@ -34,6 +34,12 @@ export default (state = { loading: false, userEvents: [] }, action) => {
           ...newState
         ]
       }
+
+      case 'USER_EVENT_FAILURE':
+        return {
+          errors: action.errors || []
+        }
+
 
     default:
       return state;

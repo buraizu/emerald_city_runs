@@ -34,8 +34,18 @@ export const setEvent = (event) => {
       .then(responseJson => {
         dispatch({type: 'ADD_USER_EVENT', userEvent: responseJson})
       })
+      .catch((errors) => {
+        dispatch({type: 'USER_EVENT_FAILURE', errors: errors})
+      })
   }
 }
+
+// const authFailure = (errors) => {
+//   return {
+//     type: types.AUTHENTICATION_FAILURE,
+//     errors: errors
+//   }
+// }
 
 export const setGoal = (userEvent) => {
 
@@ -70,24 +80,3 @@ export const deleteUserEvent = (userEvent) => {
       .then(dispatch({type: 'DELETE_USER_EVENT', userEvent: userEvent}))
     }
 }
-
-// export const setEvent = (feature) => {
-//   feature.updated_at = new Date();
-//   let featureId = feature.id;
-//   let data = {
-//     method: 'PUT',
-//     headers: {
-//       'Accept': 'application/json',
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(feature)
-//   }
-//
-//   return function(dispatch) {
-//     return fetch(`/api/events/${featureId}`, data)
-//       .then(response => response.json())
-//       .then(responseJson => {
-//         dispatch({type: 'FEATURE_EVENT', event: responseJson})
-//       })
-//   }
-// }
