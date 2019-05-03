@@ -7,12 +7,23 @@ class UserEventsController < ApplicationController
   end
 
   def create
-    @user_event = UserEvent.new(user_event_params)
-    @user_event.user_id = current_user.id
-    @user_event.event_id = params[:id]
+    event_ids = []
+    current_user_user_events = current_user.user_events
+      if current_user_user_events.length > 1
+        current_user_user_events.each do |e|
+        event_ids << e.event_id
+      end
+    end
+    if !event_ids.include?(params[:id])
+      @user_event = UserEvent.new(user_event_params)
+      @user_event.user_id = current_user.id
+      @user_event.event_id = params[:id]
 
-    if @user_event && @user_event.save
-      render json: @user_event
+      if @user_event && @user_event.save
+        render json: @user_event
+      else
+        render json: { message: @user_event.errors }, status: 400
+      end
     else
       render json: { message: @user_event.errors }, status: 400
     end
