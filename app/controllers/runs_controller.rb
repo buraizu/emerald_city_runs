@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-  before_action :authenticate_user, only: [:update, :destroy, :create, :index]
+  before_action :authenticate_user, only: [:update, :destroy, :create]
 
   def index
     @runs = current_user.runs
@@ -11,7 +11,7 @@ class RunsController < ApplicationController
     if @run && @run.save
       render json: @run
     else
-      render json: { message: @run.errors }, status: 400
+      render json: { message: run.errors }, status: 400
     end
   end
 
