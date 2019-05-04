@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Run from './Run';
 
 const RunsList = (props) => {
-  let displayRuns = <div>Nothing to display at the moment. Try refreshing.</div>
+  let runCount = <div className="feature text-center">RUNS: {props.runs.runs.length}</div>
+  let displayRuns;
 
   if(props.runs.runs !== undefined && props.runs.runs.length > 0) {
     displayRuns = props.runs.runs.map((run, index) =>
@@ -13,6 +14,7 @@ const RunsList = (props) => {
 
   return (
     <div>
+      {runCount}
       {displayRuns}
     </div>
   )
