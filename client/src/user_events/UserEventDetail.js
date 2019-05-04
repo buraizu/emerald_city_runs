@@ -125,7 +125,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 UserEventDetail.propTypes = {
-
+  userEvent: PropTypes.object.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserEventDetail);

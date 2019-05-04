@@ -32,7 +32,7 @@ class UserEventsContainer extends Component {
  }
 
  UserEventsContainer.propTypes = {
-
+   userEvents: PropTypes.object.isRequired
  }
 
 export default connect (mapStateToProps, {...actions})(UserEventsContainer);

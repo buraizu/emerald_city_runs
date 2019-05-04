@@ -27,7 +27,7 @@ const UserEvent = ({userEvent}) => {
 }
 
 UserEvent.propTypes = {
-
+  userEvent: PropTypes.object.isRequired
 }
 
 export default UserEvent;

@@ -62,7 +62,7 @@ class TrophyCase extends Component {
  }
 
  TrophyCase.propTypes = {
-
+   userEvents: PropTypes.object.isRequired,
  }
 
 export default connect (mapStateToProps, {...actions})(TrophyCase);

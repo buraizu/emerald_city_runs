@@ -1,17 +1,8 @@
 import React, { Component }  from 'react';
 import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
-// import * as actions from '../actions/index';
-// import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 class PastUserEventForm extends Component {
-
-  completeUserEvent() {
-    debugger;
-    this.props.setGoal(this.props.userEvent)
-
-  }
 
   render() {
 
@@ -22,7 +13,7 @@ class PastUserEventForm extends Component {
         <p>Date: {this.props.userEvent.date}</p>
         <p>
           <a href={this.props.userEvent.url} target="_blank" rel="noopener noreferrer">
-              <span> {this.props.userEvent.title}</span>
+            <span> {this.props.userEvent.title}</span>
           </a>
         </p>
         <h3>Record your result</h3>
@@ -52,12 +43,10 @@ const mapStateToProps = (state) => {
   }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//   return { actions: bindActionCreators(actions, dispatch) }
-// }
-
 PastUserEventForm.propTypes = {
-
+  userEvent: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  saveUserEvent: PropTypes.func.isRequired
 }
 
 export default PastUserEventForm = withRouter((PastUserEventForm));

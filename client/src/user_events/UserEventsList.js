@@ -54,7 +54,7 @@ const UserEventsList = (props) => {
 }
 
 UserEventsList.propTypes = {
-
+  userEvents: PropTypes.object.isRequired
 }
 
 export default UserEventsList;

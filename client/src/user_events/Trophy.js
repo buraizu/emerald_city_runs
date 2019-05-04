@@ -16,7 +16,7 @@ const Trophy = ({userEvent}) => {
 }
 
 Trophy.propTypes = {
-
+  userEvent: PropTypes.object.isRequired
 }
 
 export default Trophy;
