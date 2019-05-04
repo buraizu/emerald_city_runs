@@ -11,7 +11,7 @@ class RunsController < ApplicationController
     if @run && @run.save
       render json: @run
     else
-      render json: { message: run.errors }, status: 400
+      render json: { message: @run.errors }, status: 400
     end
   end
 
