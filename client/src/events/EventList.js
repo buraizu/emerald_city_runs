@@ -4,8 +4,6 @@ import EventDetail from './EventDetail';
 
 const EventList = (props) => {
 
-  console.log(props);
-
   const displayEvents = props.runEvents.events.map((event, index) => {
     return (
       <EventDetail key={index} runEvent={event} />

@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import UserEventDetail from './UserEventDetail';
-import PastUserEventForm from './PastUserEventForm';
 import UserEvent from './UserEvent';
 import { Link } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';

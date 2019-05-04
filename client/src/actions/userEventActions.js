@@ -1,5 +1,3 @@
-import * as types from './actionTypes';
-
 export const fetchUserEvents = () => {
   let data = {
     method: 'GET',

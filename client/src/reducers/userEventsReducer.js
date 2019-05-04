@@ -3,21 +3,18 @@ export default (state = { loading: false, userEvents: [] }, action) => {
   switch(action.type) {
 
     case 'ADD_USER_EVENT':
-
-     return {
-       userEvents: [action.userEvent, ...state.userEvents]
-     };
+      return {
+        userEvents: [action.userEvent, ...state.userEvents]
+      };
 
     case 'LOADING_USER_EVENTS':
       return Object.assign({}, state, {loading: true});
 
     case 'FETCH_USER_EVENTS':
       const sortedUserEvents = action.payload.sort((event1, event2) => new Date(event1.date) - new Date(event2.date))
-
       return {loading: false, userEvents: sortedUserEvents};
 
     case 'UPDATE_USER_EVENT':
-
       return {
         userEvents: [
           ...state.userEvents.filter(userEvent => userEvent.id !== action.userEvent.id),
@@ -36,10 +33,10 @@ export default (state = { loading: false, userEvents: [] }, action) => {
         ]
       }
 
-      case 'USER_EVENT_FAILURE':
-        return {
-          errors: action.errors || []
-        }
+    case 'USER_EVENT_FAILURE':
+      return {
+        errors: action.errors || []
+      }
 
     default:
       return state;

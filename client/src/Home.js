@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions/index';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom';
-import LogIn from './users/LogIn';
-import SignUp from './users/SignUp';
-import EventList from './events/EventList';
 
 class Home extends Component {
 

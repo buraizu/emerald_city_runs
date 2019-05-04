@@ -7,7 +7,6 @@ export default (state = { loading: false, events: [] }, action) => {
 
     case 'FETCH_EVENTS':
       let sortedEvents = action.payload.sort((event1, event2) => new Date(event1.date) - new Date(event2.date))
-
       return {loading: false, events: sortedEvents};
 
     default:

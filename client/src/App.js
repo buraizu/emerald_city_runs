@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import { connect } from 'react-redux';
 import RunsContainer from './runs/RunsContainer';
-import Header from './Header';
 import Home from './Home';
 import EventsContainer from './events/EventsContainer';
 import RunDetail from './runs/RunDetail';
@@ -17,7 +16,6 @@ import UserEventsContainer from './user_events/UserEventsContainer';
 import UserEventDetail from './user_events/UserEventDetail';
 import TrophyCase from './user_events/TrophyCase';
 import Navigation from './Navigation';
-import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
 class App extends Component {

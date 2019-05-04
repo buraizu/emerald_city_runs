@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-
-import Col from 'react-bootstrap/Col';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import { withRouter } from 'react-router-dom';
+
 
 class LogIn extends Component {
   constructor(props) {
@@ -54,7 +53,7 @@ class LogIn extends Component {
             />
           </form>
         </div>
-      
+
     )
   }
 

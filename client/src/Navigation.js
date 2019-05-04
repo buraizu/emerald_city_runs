@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Link, withRouter } from "react-router-dom";
 import { logout } from './actions/index';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
 class Navigation extends Component {
   handleLogout = (e) => {

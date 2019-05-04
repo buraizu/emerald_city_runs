@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 import { Link } from 'react-router-dom';
-import UserEvent from './UserEvent';
 import Trophy from './Trophy';
 
 class TrophyCase extends Component {
