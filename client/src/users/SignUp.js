@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+import Col from 'react-bootstrap/Col';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
+import { withRouter } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
-
     this.state = { email: '', password: '' }
-
-
   }
 
   handleOnChange = (event) => {
@@ -20,7 +19,7 @@ class SignUp extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.signup(this.state)) {
-      this.props.history.push('/')
+      this.props.history.push('/user_profile')
       window.alert("Thank you for signing up.")
     } else {
       window.alert("We're having issues creating your account.")
@@ -29,8 +28,8 @@ class SignUp extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Sign Up</h1>
+      <div className="feature">
+        <h3>Sign Up</h3>
         <form>
           <span>Email: </span>
           <input
@@ -59,4 +58,4 @@ class SignUp extends Component {
 
 }
 
-export default connect(null, {...actions})(SignUp);
+export default SignUp = withRouter(connect(null, {...actions})(SignUp));

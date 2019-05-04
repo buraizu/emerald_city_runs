@@ -6,6 +6,7 @@ import RunsList from './RunsList';
 import RunForm from './RunForm';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
+import { Link } from "react-router-dom";
 
 class RunsContainer extends Component {
 
@@ -17,12 +18,17 @@ class RunsContainer extends Component {
     const runs = this.props.runs;
 
       return (
-        <div className="background">
+        <div>
           <Row>
-            <Col md={4}>
+            <Col md={{ span: 2, offset: 5 }}>
+              <h2 className="displayText text-center">Runs</h2>
+              </Col>
+          </Row>
+          <Row>
+            <Col md={{ span: 4, offset: 1 }}>
               <RunForm postRun={this.props.postRun} />
             </Col>
-            <Col md={{ span: 4, offset: 4 }}>
+            <Col md={{ span: 4, offset: 2 }}>
               <RunsList runs={runs} />
             </Col>
           </Row>
