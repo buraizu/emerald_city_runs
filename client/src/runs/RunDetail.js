@@ -87,7 +87,6 @@ class RunDetail extends Component {
           <button onClick={this.toggleEdit}>edit</button>
           <button onClick={this.deleteRun}>delete</button>
           <p><Link to={'/runs'}>Back to My Runs</Link><span> --- <Link to={'/user_profile'}>My Profile</Link></span></p>
-          <p><Link to={'/'}>Home</Link></p>
         </div>
       </Col>
     )

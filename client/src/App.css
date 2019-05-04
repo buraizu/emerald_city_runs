@@ -95,15 +95,11 @@ html {
   height: auto;
   text-align: center;
   margin: 0 auto;
-
   overflow: auto;
-  vertical-align: top;
-  
 }
 
 .event-feature {
-  margin: 5px;
   float: left;
   width: 31%;
-  height: 300px;
+  height: 275px;
 }
