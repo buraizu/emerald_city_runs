@@ -23,21 +23,35 @@ class TrophyCase extends Component {
       return <Trophy key={userEvent.id} userEvent={userEvent} />
     })
 
-    return (
-      <div className="background">
-        <Row>
-          <Col md={{ span: 2, offset: 5 }}>
-            <h2 className="displayText">Your Trophies</h2>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={{ span: 4, offset: 4 }}>
-            <div className="feature">{displayTrophies}</div>
-          </Col>
-        </Row>
-      </div>
-      )
-    }
+    if(trophyEvents.length > 0) {
+      return (
+        <div>
+          <Row>
+            <Col md={{ span: 2, offset: 5 }}>
+              <h2 className="displayText">Your Trophies</h2>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={{ span: 4, offset: 4 }}>
+              <div className="feature">{displayTrophies}</div>
+            </Col>
+          </Row>
+        </div>
+        )
+      } else {
+        return (
+          <div>
+            <Row>
+              <Col md={{ span: 4, offset: 4 }}>
+                <div className="feature text-center">
+                  <h3>Come back once you've completed some <Link to={'/events'}>Events!</Link></h3>
+                </div>
+              </Col>
+            </Row>
+          </div>
+          )
+        }
+      }
 
  }
 
