@@ -13,9 +13,6 @@ const Header = () => (
         <Col xs lg="1">
           <span><NavLink to="/events">Events</NavLink></span>
         </Col>
-        <Col xs lg="1">
-          <span><NavLink to="/runs">Runs</NavLink></span>
-        </Col>
       </Row>
     </div>
   </header>

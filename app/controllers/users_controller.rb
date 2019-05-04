@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-
-
+  before_action :set_user, only: [:show, :update]
 
   def create
     @user = User.new(user_params)
@@ -21,10 +20,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    render json: @user
+  end
+
   private
 
-  def user_params
-    params.require(:user).permit(:email, :password)
-  end
+    def set_user
+      @user = User.find_by(id: params[:id])
+    end
+
+    def user_params
+      params.require(:user).permit(:email, :password)
+    end
 
 end

@@ -1,15 +1,14 @@
 class RunsController < ApplicationController
-  # before_action :authenticate_user, only: [:update, :destroy, :create]
+  before_action :authenticate_user, only: [:update, :destroy, :create, :index]
 
   def index
-    @runs = Run.all
+    @runs = current_user.runs
     render json: @runs, status: 200
   end
 
   def create
-    @run = Run.new(run_params)
-    @run.user_id = 1
-    if @run.save
+    @run = current_user.runs.build(run_params)
+    if @run && @run.save
       render json: @run
     else
       render json: { message: @run.errors }, status: 400
