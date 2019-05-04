@@ -36,7 +36,9 @@ class EditUserEventForm extends Component {
 }
 
 EditUserEventForm.propTypes = {
-
+  userEvent: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  saveUserEvent: PropTypes.func.isRequired
 }
 
 export default EditUserEventForm;

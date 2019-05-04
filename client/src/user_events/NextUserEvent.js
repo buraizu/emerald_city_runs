@@ -34,7 +34,7 @@ const NextUserEvent = ({userEvents}) => {
         <h2>Your next event</h2>
         <h4>{nextUserEvent.title}</h4>
         <p>{nextUserEvent.date}</p>
-        <p>Only {daysRemaining()} days remaining until your event!</p>
+        <p>Only {daysRemaining()} days until your event!</p>
         <p>{goalText}</p>
         <p><a href={nextUserEvent.url} target="_blank" rel="noopener noreferrer">Event Home Page</a></p>
 
@@ -54,12 +54,8 @@ const NextUserEvent = ({userEvents}) => {
   }
 }
 
-
-
-
-
 NextUserEvent.propTypes = {
-
+  nextUserEvent: PropTypes.object
 }
 
 export default NextUserEvent;
