@@ -3,6 +3,7 @@ export default (state = { loading: false, userEvents: [] }, action) => {
   switch(action.type) {
 
     case 'ADD_USER_EVENT':
+
      return {
        userEvents: [action.userEvent, ...state.userEvents]
      };
@@ -39,7 +40,6 @@ export default (state = { loading: false, userEvents: [] }, action) => {
         return {
           errors: action.errors || []
         }
-
 
     default:
       return state;

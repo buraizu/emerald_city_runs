@@ -1,4 +1,5 @@
 class UserEventsController < ApplicationController
+
   before_action :authenticate_user, only: [:create, :index, :update, :destroy]
 
   def index
@@ -28,6 +29,7 @@ class UserEventsController < ApplicationController
     @user_event = UserEvent.find_by(id: params[:id])
     @user_event.delete
   end
+
 
   private
 
