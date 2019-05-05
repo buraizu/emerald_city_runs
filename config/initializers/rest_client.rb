@@ -7,19 +7,19 @@ require 'rails/configuration'
 
   data = JSON.parse( RestClient.get("#{active_url}#{api_key}"))
 
-  data["results"].each do |result|
-
-    existing_event = Event.find_by(title: result["assetName"]) # Check if event is already in db
-
-    if !existing_event
-      newEvent = Event.new
-      newEvent.title = result["assetName"]
-      newEvent.url = result["homePageUrlAdr"]
-      newEvent.date = result["activityStartDate"]
-      if newEvent.save
-        puts "saved event from Active api"
-      else
-        puts "did not save event"
-      end
-    end
-  end
+  # data["results"].each do |result|
+  #
+  #   existing_event = Event.find_by(title: result["assetName"]) # Check if event is already in db
+  #
+  #   if !existing_event
+  #     newEvent = Event.new
+  #     newEvent.title = result["assetName"]
+  #     newEvent.url = result["homePageUrlAdr"]
+  #     newEvent.date = result["activityStartDate"]
+  #     if newEvent.save
+  #       puts "saved event from Active api"
+  #     else
+  #       puts "did not save event"
+  #     end
+  #   end
+  # end

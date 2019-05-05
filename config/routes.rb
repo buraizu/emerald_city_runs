@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :user_events
     post 'user_token' => 'user_token#create'
     post 'find_user' => 'users#find'
+    get 'get_events' => 'events#create'
   end
 
 end
