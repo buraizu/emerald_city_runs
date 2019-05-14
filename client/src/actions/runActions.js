@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 export const fetchRuns = () => {
   let data = {
     method: 'GET',

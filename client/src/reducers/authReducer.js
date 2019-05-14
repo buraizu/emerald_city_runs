@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 import * as types from '../actions/actionTypes';
 
 const initialState = {

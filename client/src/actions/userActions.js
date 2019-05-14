@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 import * as types from './actionTypes'
 
 //this function has an authentication request action type

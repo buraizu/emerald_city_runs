@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 import React, { Component } from 'react';
 import Col from 'react-bootstrap/Col';
 import EditRunForm from './EditRunForm';

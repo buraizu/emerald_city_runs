@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions/index';
@@ -6,7 +8,7 @@ import { Link } from 'react-router-dom';
 class Home extends Component {
 
   componentDidMount() {
-    this.props.getEvents(); 
+    this.props.getEvents();
   }
 
   render() {

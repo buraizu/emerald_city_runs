@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 export default (state = { loading: false, runs: [] }, action) => {
 
   switch(action.type) {

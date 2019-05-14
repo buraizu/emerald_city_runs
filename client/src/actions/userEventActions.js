@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 export const fetchUserEvents = () => {
   let data = {
     method: 'GET',
