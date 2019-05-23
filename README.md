@@ -4,14 +4,11 @@ Emerald City Runs will get you connected to upcoming running events in the Seatt
 
 GETTING STARTED
 
-Clone and download the project directory at https://github.com/buraizu/emerald_city_runs.  Navigate into the project directory with 'cd emerald_city_runs', then run 'npm install' to download the project dependencies.  Finally, 'rake start' to boot up the App.
+Clone and download the project directory at https://github.com/buraizu/emerald_city_runs. Navigate into the project directory with 'cd emerald_city_runs', then run 'npm install' to download the project dependencies. Finally, 'rake start' to boot up the App.
 
 BUILT WITH
 
-React
-Redux
-Ruby on Rails
-Thunk Middleware
+React Redux Ruby on Rails Thunk Middleware
 
 CONTRIBUTING
 
@@ -32,22 +29,3 @@ This project is licensed under the MIT License
 ACKNOWLEDGEMENTS
 
 Background Photo by MILKOVÍ on Unsplash
-
-// <button onClick={this.incrementScore}>Vote for this event</button>
-// <div>{this.state.count}</div>
-
-<div>
-  <p>{this.state.score}</p>
-</div>
-
-// incrementScore = () => {
-//   const newScore = this.state.score + 1
-//   this.setState({
-//     score: newScore
-//   });
-// }
-
-And now for something completely different...
-
-44168
-44169

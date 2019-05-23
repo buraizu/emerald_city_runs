@@ -14,13 +14,6 @@ class EventDetail extends Component {
       runEvent: this.props.event
     }
     this.setUserEvent = this.setUserEvent.bind(this);
-    this.toggleFeatured = this.toggleFeatured.bind(this);
-  }
-
-  toggleFeatured() {
-    const runEvent = this.state.runEvent;
-    runEvent["featured"] = true;
-    return this.setState({runEvent: runEvent})
   }
 
   setUserEvent() {
