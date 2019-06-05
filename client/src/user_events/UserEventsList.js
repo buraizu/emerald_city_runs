@@ -49,6 +49,7 @@ const UserEventsList = (props) => {
           </div>
         </Col>
       </Row>
+      <img src={'/power-by--wht.png'} />
     </div>
   )
 }
