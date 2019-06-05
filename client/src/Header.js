@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Col from 'react-bootstrap/Col';

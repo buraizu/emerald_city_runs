@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';

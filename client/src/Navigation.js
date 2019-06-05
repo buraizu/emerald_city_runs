@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { Link, withRouter } from "react-router-dom";

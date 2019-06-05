@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 import { combineReducers } from 'redux';
 import eventsReducer from './eventsReducer';
 import runsReducer from './runsReducer';

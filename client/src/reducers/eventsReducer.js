@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 export default (state = { loading: false, events: [] }, action) => {
 
   switch(action.type) {

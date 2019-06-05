@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 export const fetchEvents = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_EVENTS' });
