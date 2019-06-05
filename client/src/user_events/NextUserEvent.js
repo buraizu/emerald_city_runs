@@ -36,8 +36,9 @@ const NextUserEvent = ({userEvents}) => {
         <p>{nextUserEvent.date}</p>
         <p>Only {daysRemaining()} days until your event!</p>
         <p>{goalText}</p>
-        <p><a href={nextUserEvent.url} target="_blank" rel="noopener noreferrer">Event Home Page</a></p>
+        <p><a href={nextUserEvent.url} target="_blank" rel="noopener noreferrer"><img src={'/btn_gray.png'}  alt="" /></a></p>
         <p><Link to={'/user_events/' + nextUserEvent.id}>Details</Link></p>
+        <img src={'/A-icon.png'}  alt="" />
       </div>
     )
   } else {

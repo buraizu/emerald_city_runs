@@ -33,11 +33,11 @@ class EventDetail extends Component {
         <p>
           Event Home Page:
           <a href={this.props.runEvent.url} target="_blank" rel="noopener noreferrer">
-            <img src={'/btn_gray.png'} />
+            <img src={'/btn_gray.png'}  alt="" />
           </a>
         </p>
         <button onClick={this.setUserEvent}>Set Your Event</button>
-        <img src={'/A-icon.png'} />
+        <img src={'/A-icon.png'}  alt="" />
       </div>
     )
   }

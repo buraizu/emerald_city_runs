@@ -35,7 +35,7 @@ class TrophyCase extends Component {
               <div className="feature">{displayTrophies}</div>
             </Col>
           </Row>
-          <img src={'/power-by--wht.png'} />
+          <img src={'/power-by--wht.png'}  alt="" />
         </div>
         )
       } else {
@@ -48,7 +48,7 @@ class TrophyCase extends Component {
                 </div>
               </Col>
             </Row>
-            <img src={'/power-by--wht.png'} />
+            <img src={'/power-by--wht.png'}  alt="" />
           </div>
           )
         }

@@ -97,11 +97,12 @@ class UserEventDetail extends Component {
           <h3>Your Event Details</h3>
           <h4>{this.props.userEvent.title}</h4>
           <p>Date: {this.props.userEvent.date}</p>
-          <p><a href={this.props.userEvent.url} target="_blank" rel="noopener noreferrer">Event Home Page</a></p>
+          <p><a href={this.props.userEvent.url} target="_blank" rel="noopener noreferrer"><img src={'/btn_gray.png'}  alt="" /></a></p>
           <p>{goalOrResultText}</p>
           <button onClick={this.toggleEdit}>{buttonText}</button>
           <button onClick={this.deleteUserEvent}>delete this event</button>
           <p><Link to={'/user_events'}>Back to My Events</Link><span> --- <Link to={'/user_profile'}>My Profile</Link></span></p>
+          <img src={'/A-icon.png'}  alt="" />
         </div>
       </Col>
     )

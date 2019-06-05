@@ -32,6 +32,7 @@ class PastUserEventForm extends Component {
             value={this.props.saving ? 'Saving...' : 'Save'}
           />
         </form>
+        <img src={'/A-icon.png'}  alt="" />
       </div>
     )
   }
