@@ -26,18 +26,19 @@ class EventDetail extends Component {
       <div
         key={this.props.key}
         event={this.props.runEvent}
-        className="feature event-feature"
+        className="feature event-feature icon-fix"
       >
         <h3>{this.props.runEvent.title}</h3>
         <p>Date: {this.props.runEvent.date}</p>
         <p>
-          Event Home Page:
           <a href={this.props.runEvent.url} target="_blank" rel="noopener noreferrer">
             <img src={'/btn_gray.png'}  alt="" />
           </a>
         </p>
-        <button onClick={this.setUserEvent}>Set Your Event</button>
-        <img src={'/A-icon.png'}  alt="" />
+        <p>
+          <button onClick={this.setUserEvent}>Add to My Events</button>
+        </p>
+        <img className="active-icon" src={'/A-icon.png'}  alt="" />
       </div>
     )
   }

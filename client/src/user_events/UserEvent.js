@@ -21,7 +21,7 @@ const UserEvent = ({userEvent}) => {
       <p>{displayText}</p>
       <p><Link to={'/user_events/' + userEvent.id}>{buttonText}</Link></p>
       <p><a href={userEvent.url} target="_blank" rel="noopener noreferrer"><img src={'/btn_gray.png'}  alt="" /></a></p>
-      <img src={'/A-icon.png'}  alt="" />
+      <img className="active-icon" src={'/A-icon.png'}  alt="" />
     </div>
   )
 

@@ -102,8 +102,9 @@ class UserEventDetail extends Component {
           <button onClick={this.toggleEdit}>{buttonText}</button>
           <button onClick={this.deleteUserEvent}>delete this event</button>
           <p><Link to={'/user_events'}>Back to My Events</Link><span> --- <Link to={'/user_profile'}>My Profile</Link></span></p>
-          <img src={'/A-icon.png'}  alt="" />
+          <img className="active-icon" src={'/A-icon.png'}  alt="" />
         </div>
+        <img src={'/power-by--wht.png'} alt="" />
       </Col>
     )
   }

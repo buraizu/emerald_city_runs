@@ -54,6 +54,7 @@ class UserProfile extends Component {
             <NextUserEvent userEvents={userEvents} />
           </Col>
         </Row>
+        <img src={'/power-by--wht.png'} alt="" />
       </div>
     );
   }

@@ -62,6 +62,8 @@ html {
   margin: 5px;
   border: 3px solid #067f2e;
   border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .displayText {
@@ -93,7 +95,6 @@ html {
 .eventsContainer {
   width: 100%;
   height: auto;
-  text-align: center;
   margin: 0 auto;
   overflow: auto;
 }
@@ -102,4 +103,11 @@ html {
   float: left;
   width: 31%;
   height: 375px;
+  position: relative;
+}
+
+.active-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }

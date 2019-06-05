@@ -13,7 +13,7 @@ const EventList = (props) => {
 
   return (
     <div>
-      <ul className="displayEvents">
+      <ul>
         {displayEvents}
       </ul>
       <img src={'/power-by--drk.png'} alt="" />
