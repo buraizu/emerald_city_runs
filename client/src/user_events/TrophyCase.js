@@ -48,7 +48,6 @@ class TrophyCase extends Component {
                 </div>
               </Col>
             </Row>
-            <img src={'/power-by--wht.png'}  alt="" />
           </div>
           )
         }

@@ -16,7 +16,6 @@ const EventList = (props) => {
       <ul>
         {displayEvents}
       </ul>
-      <img src={'/power-by--drk.png'} alt="" />
     </div>
   );
 
