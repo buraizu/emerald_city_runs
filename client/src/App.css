@@ -6,6 +6,15 @@ html {
   background-size: cover;
 }
 
+a {
+  text-decoration: none;
+  color: #1b770f;
+}
+
+a:link {
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
 }
@@ -40,20 +49,6 @@ html {
   }
 }
 
-/* .background {
-  background-image: url('/milkovi.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
-
-
-/* .background {
-  background: url(/milkovi.jpg) no-repeat center center fixed;
-  background-size: cover;
-
-} */
-
 .feature {
   background-color: rgb(244, 244, 244, .85);
   padding: 10px;
@@ -73,6 +68,8 @@ html {
 }
 
 .navLink {
+  color: #1b770f;
+  cursor: pointer;
   display: inline;
   margin: 25px;
   text-decoration: none;

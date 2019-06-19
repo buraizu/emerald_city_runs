@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions/index';
 import { Link } from 'react-router-dom';
+// import GoogleLogin from 'react-google-login';
 
 class Home extends Component {
 
   componentDidMount() {
     this.props.getEvents();
   }
+
+  // const responseGoogle = (response) => {
+  //   console.log(response);
+  // }
 
   render() {
     return (
