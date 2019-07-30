@@ -16,9 +16,10 @@ class LogIn extends Component {
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    if(this.props.authenticate(this.state)) {
+    const user = await this.props.authenticate(this.state)
+      if(user) {
         this.props.history.push('/user_profile')
       } else {
         window.alert("Unable to Log In with provided credentials")
