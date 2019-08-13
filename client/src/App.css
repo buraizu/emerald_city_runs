@@ -82,3 +82,15 @@ a:link {
   top: 10px;
   right: 10px;
 }
+
+.login {
+  width: 30%;
+}
+
+.submissionField {
+  width: 300px;
+}
+
+/* input[type=text] {
+   width: 300px;
+} */
