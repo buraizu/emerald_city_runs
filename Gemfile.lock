@@ -83,6 +83,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
+    ddtrace (0.42.0)
+      msgpack
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.2)
@@ -249,6 +251,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  ddtrace
   dotenv-rails
   foreman (~> 0.82.0)
   jbuilder (~> 2.5)
