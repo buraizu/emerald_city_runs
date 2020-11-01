@@ -9,7 +9,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index.js';
 import { datadogRum } from '@datadog/browser-rum'
-import { datadogLogs } from '@datadog/browser-logs'
+
 
 datadogRum.init({
   applicationId: '53485610-a993-4b72-8f96-9ebe0d6a939f',
@@ -17,7 +17,7 @@ datadogRum.init({
   site: 'datadoghq.com',
   service: 'emerald_city_runs',
   env: 'dev',
-  version: '1.0.0',
+  lsversion: '1.0.0',
   sampleRate: 100,
   trackInteractions: true
 });

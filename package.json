@@ -2,6 +2,7 @@
   "name": "ecr2",
   "private": true,
   "dependencies": {
+    "@datadog/browser-rum": "^1.25.0",
     "bootstrap": "^4.3.1",
     "history": "^4.9.0",
     "prop-types": "^15.7.2",
